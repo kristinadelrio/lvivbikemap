@@ -38,7 +38,7 @@ open class SideMenu: UIViewController {
     open var mainContainerView = UIView()
     open var sideContainerView = UIView()
     
-    open var mainViewController: UIViewController?
+    open var mainVC: UIViewController?
     open var sideViewController: UIViewController?
     
     open var panGesture: UIPanGestureRecognizer?
@@ -57,7 +57,7 @@ open class SideMenu: UIViewController {
     public convenience init(with mainViewController: UIViewController, and sideMenuController: UIViewController) {
         self.init()
         
-        self.mainViewController = mainViewController
+        self.mainVC = mainViewController
         sideViewController = sideMenuController
         initViews()
         
@@ -111,13 +111,13 @@ open class SideMenu: UIViewController {
             closeSideMenu(with: 0.0)
         }
         
-        mainViewController?.present(viewControllerToPresent, animated: flag, completion: completion)
+        mainVC?.present(viewControllerToPresent, animated: flag, completion: completion)
     }
     
     open override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        setUpViewController(mainContainerView, targetViewController: mainViewController)
+        setUpViewController(mainContainerView, targetViewController: mainVC)
         setUpViewController(sideContainerView, targetViewController: sideViewController)
     }
     
@@ -245,9 +245,9 @@ open class SideMenu: UIViewController {
     // MARK: ViewControllers
     
     open func changeMainViewController(_ mainViewController: UIViewController,  close: Bool) {
-        if (mainViewController != self.mainViewController) {
-            removeViewController(self.mainViewController)
-            self.mainViewController = mainViewController
+        if (mainViewController != self.mainVC) {
+            removeViewController(self.mainVC)
+            self.mainVC = mainViewController
             setUpViewController(mainContainerView, targetViewController: mainViewController)
         }
         

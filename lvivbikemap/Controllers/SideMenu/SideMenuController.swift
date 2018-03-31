@@ -70,15 +70,18 @@ extension SideMenuController: UITableViewDelegate {
             isFiltering = isCompileRoad && isFiltering
             isCompileRoad = !isCompileRoad
             tableView.reloadData()
-        case .events: print("TODO")
-        case .feedback: print("TODO")
+        case .events:
+            present(with: "EventsController")
+        case .feedback:
+            present(with: "FeedbackController")
+        case .news:
+            present(with: "NewsController")
+        case .about:
+            present(with: "AboutController")
         case .filter:
             isCompileRoad = isFiltering && isCompileRoad
             isFiltering = !isFiltering
             tableView.reloadData()
-        case .news: print("TODO")
-        case .about:
-            presentAbout()
         case .bikeRental:
             (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeRental
             FiltersProvider.update(filter: .bikeRental, value: !filters.bikeRental)
@@ -105,10 +108,10 @@ extension SideMenuController: UITableViewDelegate {
         }
     }
     
-    func presentAbout() {
-        if let controller = storyboard?.instantiateViewController(withIdentifier: "AboutController") {
+    private func present(with identifier: String) {
+        if let controller = storyboard?.instantiateViewController(withIdentifier: identifier) {
             sideMenuController()?.closeSideMenu()
-            sideMenuController()?.mainViewController?.present(controller, animated: true, completion: nil)
+            sideMenuController()?.mainVC?.present(controller, animated: true, completion: nil)
         }
     }
 }
