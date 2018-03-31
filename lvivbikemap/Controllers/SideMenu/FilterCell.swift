@@ -30,11 +30,6 @@ class FilterCell: UITableViewCell {
         super.prepareForReuse()
         
         textLabel?.text = ""
-        imageView?.image = #imageLiteral(resourceName: "ic_check_box_outline_blank")
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        isChecked = selected
+        imageView?.image = #imageLiteral(resourceName: "ic_check_box")
     }
 }

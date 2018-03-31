@@ -10,8 +10,6 @@ import UIKit
 
 class SideMenuController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    
     enum Row: Int {
         case addMarker
         case buildRoad
@@ -20,7 +18,7 @@ class SideMenuController: UIViewController {
         case news
         case feedback
         case about
-
+        
         case bikeRental
         case bikeSharing
         case bikeRepair
@@ -30,21 +28,21 @@ class SideMenuController: UIViewController {
         case bikeParking
     }
     
-    var skeleton: [Row] = [.addMarker, .buildRoad, .filter, .events, .news, .feedback, .about]
-    var filering: [Row] = [.addMarker, .buildRoad, .filter, .bikeRental,
-                           .bikeSharing, .bikeRepair, .bikeStops, .interestPlaces, .bicyclePaths,
-                           .bikeParking, .events, .news, .feedback, .about]
-
-    var isFiltering: Bool = false
+    @IBOutlet weak var tableView: UITableView!
+    private var filters = FiltersProvider.filters()
+    private var isFiltering = false
+    
+    private var skeleton: [Row] = [.addMarker, .buildRoad, .filter, .events, .news, .feedback, .about]
+    private var filering: [Row] = [.addMarker, .buildRoad, .filter, .bikeRental, .bikeSharing, .bikeRepair,
+                                   .bikeStops, .interestPlaces, .bicyclePaths, .bikeParking, .events,
+                                   .news, .feedback, .about]
 }
 
 extension SideMenuController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44.0
-    }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         switch isFiltering ? filering[indexPath.row] : skeleton[indexPath.row] {
         case .addMarker: print("Present")
         case .buildRoad: print("Present")
@@ -55,14 +53,35 @@ extension SideMenuController: UITableViewDelegate {
             tableView.reloadData()
         case .news: print("Present")
         case .about:
-            if let controller = storyboard?.instantiateViewController(
-                withIdentifier: "AboutController") {
-                sideMenuController()?.closeSideMenu()
-                sideMenuController()?.mainViewController?.present(
-                    controller, animated: true, completion: nil)
-            }
-        default:
-            break
+            presentAbout()
+        case .bikeRental:
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeRental
+            FiltersProvider.update(filter: .bikeRental, value: !filters.bikeRental)
+        case .bikeSharing:
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeSharing
+            FiltersProvider.update(filter: .bikeSharing, value: !filters.bikeSharing)
+        case .bikeRepair:
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeRepair
+            FiltersProvider.update(filter: .bikeRepair, value: !filters.bikeRepair)
+        case .bikeStops:
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeStops
+            FiltersProvider.update(filter: .bikeStops, value: !filters.bikeStops)
+        case .interestPlaces:
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.interestPlaces
+            FiltersProvider.update(filter: .interestPlaces, value: !filters.interestPlaces)
+        case .bicyclePaths:
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bicyclePaths
+            FiltersProvider.update(filter: .bicyclePaths, value: !filters.bicyclePaths)
+        case .bikeParking:
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeParking
+            FiltersProvider.update(filter: .bikeParking, value: !filters.bikeParking)
+        }
+    }
+    
+    func presentAbout() {
+        if let controller = storyboard?.instantiateViewController(withIdentifier: "AboutController") {
+            sideMenuController()?.closeSideMenu()
+            sideMenuController()?.mainViewController?.present(controller, animated: true, completion: nil)
         }
     }
 }
@@ -105,31 +124,31 @@ extension SideMenuController: UITableViewDataSource {
             return cell
         case .bikeRental:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Bike rental".localized, state: false)
+            cell.configure(with: "Bike rental".localized, state: filters.bikeRental)
             return cell
         case .bikeSharing:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Public bike sharing".localized, state: false)
+            cell.configure(with: "Public bike sharing".localized, state: filters.bikeSharing)
             return cell
         case .bikeRepair:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Bike repair".localized, state: false)
+            cell.configure(with: "Bike repair".localized, state: filters.bikeRepair)
             return cell
         case .bikeStops:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Usefull stops".localized, state: false)
+            cell.configure(with: "Usefull stops".localized, state: filters.bikeStops)
             return cell
         case .interestPlaces:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Place of interest".localized, state: false)
+            cell.configure(with: "Place of interest".localized, state: filters.interestPlaces)
             return cell
         case .bicyclePaths:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Bicycle path".localized, state: false)
+            cell.configure(with: "Bicycle path".localized, state: filters.bicyclePaths)
             return cell
         case .bikeParking:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Bike parking".localized, state: false)
+            cell.configure(with: "Bike parking".localized, state: filters.bikeParking)
             return cell
         }
     }
