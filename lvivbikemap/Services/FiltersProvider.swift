@@ -21,9 +21,6 @@ class FiltersProvider {
     
     private static let mediator = RealmObjectAdapter<FiltersModel>()
 
-    /**
-     * Returns settings. Silently creates it if does not exist. To Edit settings properties use RealmService.write
-     */
     static func filters() -> FiltersModel {
         if let settings = mediator.objects()?.first {
             return settings
@@ -36,9 +33,6 @@ class FiltersProvider {
         }
     }
 
-    /**
-     * Creates settings. Makes sure there is only one SettingsModel objects stored
-     */
     private static func create() throws -> FiltersModel {
         try RealmService.removeAll(of: FiltersModel.self)
         return try mediator.create()

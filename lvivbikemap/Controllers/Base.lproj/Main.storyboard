@@ -202,29 +202,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycling" translatesAutoresizingMaskIntoConstraints="NO" id="koh-51-e5K">
-                                <rect key="frame" x="172" y="318" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="1M7-aj-BuW"/>
-                                    <constraint firstAttribute="width" constant="30" id="Dqw-dt-hCl"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VeloLviv" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLW-Ea-yif">
-                                <rect key="frame" x="157" y="352" width="61.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <rect key="frame" x="136.5" y="315.5" width="103" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSm-hJ-4Z1">
+                                <rect key="frame" x="135.5" y="312.5" width="105" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Y66-uW-wBA"/>
+                                    <constraint firstAttribute="width" constant="105" id="rMI-Es-at5"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycling" translatesAutoresizingMaskIntoConstraints="NO" id="koh-51-e5K">
+                                <rect key="frame" x="167" y="270.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1M7-aj-BuW"/>
+                                    <constraint firstAttribute="width" constant="40" id="Dqw-dt-hCl"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TLW-Ea-yif" firstAttribute="top" secondItem="koh-51-e5K" secondAttribute="bottom" constant="4" id="DPC-Qt-fGr"/>
-                            <constraint firstItem="koh-51-e5K" firstAttribute="centerY" secondItem="gJp-Ot-giF" secondAttribute="centerY" id="PVO-gx-8BR"/>
+                            <constraint firstItem="cSm-hJ-4Z1" firstAttribute="top" secondItem="koh-51-e5K" secondAttribute="bottom" constant="2" id="CBN-6r-rOT"/>
+                            <constraint firstItem="cSm-hJ-4Z1" firstAttribute="centerX" secondItem="gJp-Ot-giF" secondAttribute="centerX" id="Lu1-rL-PG2"/>
+                            <constraint firstItem="TLW-Ea-yif" firstAttribute="top" secondItem="cSm-hJ-4Z1" secondAttribute="bottom" constant="2" id="ZD4-Hv-XLt"/>
+                            <constraint firstItem="TLW-Ea-yif" firstAttribute="centerY" secondItem="gJp-Ot-giF" secondAttribute="centerY" id="ZLA-Jj-bLT"/>
                             <constraint firstItem="koh-51-e5K" firstAttribute="centerX" secondItem="gJp-Ot-giF" secondAttribute="centerX" id="m8M-l4-4t0"/>
                             <constraint firstItem="TLW-Ea-yif" firstAttribute="centerX" secondItem="gJp-Ot-giF" secondAttribute="centerX" id="ndm-Vf-jGb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7RS-cG-stK"/>
                     </view>
+                    <connections>
+                        <outlet property="logo" destination="TLW-Ea-yif" id="6fW-gO-9tf"/>
+                        <outlet property="veloIcon" destination="koh-51-e5K" id="ucr-qO-edB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGm-OD-aJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -307,6 +321,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="09f-UM-Mpz"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="mPa-1t-6bP" id="m2Q-YE-HQg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhO-VR-i0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

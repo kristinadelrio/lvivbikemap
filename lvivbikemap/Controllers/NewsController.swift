@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import WebKit
 
 class NewsController: UIViewController {
 
+    @IBOutlet weak var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
