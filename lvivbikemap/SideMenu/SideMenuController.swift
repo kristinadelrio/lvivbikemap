@@ -47,8 +47,21 @@ extension SideMenuController: UITableViewDelegate {
         case .feedback: print("Present")
         case .filter: print("Present")
         case .news: print("Present")
-        case .about: print("Present")
+        case .about:
+            
+            if let controller = storyboard?.instantiateViewController(
+                withIdentifier: "AboutController") {
+                sideMenuController()?.closeSideMenu()
+                sideMenuController()?.mainViewController?.present(controller, animated: true, completion: nil)
+                
+                
+            }
         }
+    }
+    
+    
+    //
+    func changeViewController() {
         
     }
 }
