@@ -13,6 +13,7 @@
 		0E6865F8206F9881004A558C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E6865F7206F9881004A558C /* Assets.xcassets */; };
 		0E6865FB206F9881004A558C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6865F9206F9881004A558C /* LaunchScreen.storyboard */; };
 		0E686606206F9882004A558C /* lvivbikemapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686605206F9882004A558C /* lvivbikemapTests.swift */; };
+		A701F127865732B9E03123A6 /* Pods_lvivbikemap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 		0E686601206F9882004A558C /* lvivbikemapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lvivbikemapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E686605206F9882004A558C /* lvivbikemapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lvivbikemapTests.swift; sourceTree = "<group>"; };
 		0E686607206F9882004A558C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EE4D1B5CEAE50BADDE784DA /* Pods-lvivbikemap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.debug.xcconfig"; sourceTree = "<group>"; };
+		6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lvivbikemap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A24DDEEE8DAD96B05C307E45 /* Pods-lvivbikemap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.release.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A701F127865732B9E03123A6 /* Pods_lvivbikemap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 				0E6865EF206F987D004A558C /* lvivbikemap */,
 				0E686604206F9882004A558C /* lvivbikemapTests */,
 				0E6865EE206F987D004A558C /* Products */,
+				A771B78E92C5C67A18873FF5 /* Pods */,
+				18D51B551BDB3A23D09B6F0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +84,13 @@
 		0E6865EF206F987D004A558C /* lvivbikemap */ = {
 			isa = PBXGroup;
 			children = (
-				0E6865F0206F987D004A558C /* AppDelegate.swift */,
-				0E6865F2206F987D004A558C /* ViewController.swift */,
-				0E6865F4206F987D004A558C /* Main.storyboard */,
-				0E6865F7206F9881004A558C /* Assets.xcassets */,
-				0E6865F9206F9881004A558C /* LaunchScreen.storyboard */,
 				0E6865FC206F9881004A558C /* Info.plist */,
+				0E686615206F9B0C004A558C /* Extension */,
+				0E686614206F9B04004A558C /* Realm */,
+				0E686613206F9A67004A558C /* Providers */,
+				0E686612206F9A60004A558C /* Services */,
+				0E686611206F9A06004A558C /* Resources */,
+				0E686610206F99DB004A558C /* Controllers */,
 			);
 			path = lvivbikemap;
 			sourceTree = "<group>";
@@ -96,6 +104,70 @@
 			path = lvivbikemapTests;
 			sourceTree = "<group>";
 		};
+		0E686610206F99DB004A558C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0E6865F2206F987D004A558C /* ViewController.swift */,
+				0E6865F4206F987D004A558C /* Main.storyboard */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0E686611206F9A06004A558C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E6865F0206F987D004A558C /* AppDelegate.swift */,
+				0E6865F7206F9881004A558C /* Assets.xcassets */,
+				0E6865F9206F9881004A558C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0E686612206F9A60004A558C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0E686613206F9A67004A558C /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		0E686614206F9B04004A558C /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		0E686615206F9B0C004A558C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		18D51B551BDB3A23D09B6F0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A771B78E92C5C67A18873FF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EE4D1B5CEAE50BADDE784DA /* Pods-lvivbikemap.debug.xcconfig */,
+				A24DDEEE8DAD96B05C307E45 /* Pods-lvivbikemap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E68660A206F9882004A558C /* Build configuration list for PBXNativeTarget "lvivbikemap" */;
 			buildPhases = (
+				FDC98C0B3ED3A8B3B2C3B504 /* [CP] Check Pods Manifest.lock */,
 				0E6865E9206F987D004A558C /* Sources */,
 				0E6865EA206F987D004A558C /* Frameworks */,
 				0E6865EB206F987D004A558C /* Resources */,
+				0D1457BE818049D5C95AD124 /* [CP] Embed Pods Frameworks */,
+				872B4213DD4F3EDF9A0FD5D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,6 +265,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D1457BE818049D5C95AD124 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		872B4213DD4F3EDF9A0FD5D0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDC98C0B3ED3A8B3B2C3B504 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lvivbikemap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0E6865E9206F987D004A558C /* Sources */ = {
@@ -355,6 +489,7 @@
 		};
 		0E68660B206F9882004A558C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EE4D1B5CEAE50BADDE784DA /* Pods-lvivbikemap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -372,6 +507,7 @@
 		};
 		0E68660C206F9882004A558C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A24DDEEE8DAD96B05C307E45 /* Pods-lvivbikemap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
