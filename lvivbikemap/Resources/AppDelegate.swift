@@ -8,7 +8,7 @@
 import UIKit
 import GoogleMaps
 
-let googleApiKey = "AIzaSyACTUtn8dZBGcfDIQG3MMsNsXd3VVWcSys"
+let googleApiKey = "AIzaSyBYGHYrVY3V7EVbHd4VZcDqMp6Tm5XfZPw"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

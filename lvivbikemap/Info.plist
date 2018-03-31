@@ -6,10 +6,8 @@
 	<string>Provide us your location to build roud.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Provide us your location to build roud.</string>
-	<key>Provide us your location to build roud.</key>
-	<string>Provide us your location to build roud.</string>
 	<key>NSLocationUsageDescription</key>
-	<string></string>
+	<string>gfdfb</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

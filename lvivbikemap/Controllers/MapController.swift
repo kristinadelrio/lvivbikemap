@@ -12,6 +12,7 @@ import CoreLocation
 class MapController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
+    
     let manager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class MapController: UIViewController {
         initialSetup()
         configureUI()
         requestUserLocation()
+        addMenuBarButtonItem()
     }
     
     func configureUI() {

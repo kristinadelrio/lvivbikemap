@@ -13,6 +13,14 @@
 		0E6865F8206F9881004A558C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E6865F7206F9881004A558C /* Assets.xcassets */; };
 		0E6865FB206F9881004A558C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6865F9206F9881004A558C /* LaunchScreen.storyboard */; };
 		0E686606206F9882004A558C /* lvivbikemapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686605206F9882004A558C /* lvivbikemapTests.swift */; };
+		0E68661D206FA90E004A558C /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686618206FA90E004A558C /* SideMenu.swift */; };
+		0E68661F206FA90E004A558C /* UIViewController+SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68661A206FA90E004A558C /* UIViewController+SideMenu.swift */; };
+		0E686620206FA90E004A558C /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68661B206FA90E004A558C /* SideMenuController.swift */; };
+		0E686621206FA90E004A558C /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68661C206FA90E004A558C /* SideMenuCell.swift */; };
+		0E686623206FAD4D004A558C /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686622206FAD4D004A558C /* LaunchScreenController.swift */; };
+		0E686625206FB007004A558C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E686624206FB007004A558C /* Localization.strings */; };
+		0E686628206FB062004A558C /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686627206FB062004A558C /* ThemeManager.swift */; };
+		0E68662A206FB217004A558C /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686629206FB217004A558C /* String+Localization.swift */; };
 		A701F127865732B9E03123A6 /* Pods_lvivbikemap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +45,14 @@
 		0E686601206F9882004A558C /* lvivbikemapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lvivbikemapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E686605206F9882004A558C /* lvivbikemapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lvivbikemapTests.swift; sourceTree = "<group>"; };
 		0E686607206F9882004A558C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E686618206FA90E004A558C /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		0E68661A206FA90E004A558C /* UIViewController+SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+SideMenu.swift"; sourceTree = "<group>"; };
+		0E68661B206FA90E004A558C /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
+		0E68661C206FA90E004A558C /* SideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		0E686622206FAD4D004A558C /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
+		0E686624206FB007004A558C /* Localization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
+		0E686627206FB062004A558C /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		0E686629206FB217004A558C /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		4EE4D1B5CEAE50BADDE784DA /* Pods-lvivbikemap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.debug.xcconfig"; sourceTree = "<group>"; };
 		6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lvivbikemap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24DDEEE8DAD96B05C307E45 /* Pods-lvivbikemap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.release.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +100,8 @@
 		0E6865EF206F987D004A558C /* lvivbikemap */ = {
 			isa = PBXGroup;
 			children = (
+				0E686626206FB056004A558C /* Common */,
+				0E686617206FA8FC004A558C /* SideMenu */,
 				0E6865FC206F9881004A558C /* Info.plist */,
 				0E686615206F9B0C004A558C /* Extension */,
 				0E686614206F9B04004A558C /* Realm */,
@@ -109,6 +127,7 @@
 			children = (
 				0E6865F2206F987D004A558C /* MapController.swift */,
 				0E6865F4206F987D004A558C /* Main.storyboard */,
+				0E686622206FAD4D004A558C /* LaunchScreenController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -119,6 +138,7 @@
 				0E6865F0206F987D004A558C /* AppDelegate.swift */,
 				0E6865F7206F9881004A558C /* Assets.xcassets */,
 				0E6865F9206F9881004A558C /* LaunchScreen.storyboard */,
+				0E686624206FB007004A558C /* Localization.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -147,8 +167,28 @@
 		0E686615206F9B0C004A558C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0E68661A206FA90E004A558C /* UIViewController+SideMenu.swift */,
+				0E686629206FB217004A558C /* String+Localization.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		0E686617206FA8FC004A558C /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0E686618206FA90E004A558C /* SideMenu.swift */,
+				0E68661C206FA90E004A558C /* SideMenuCell.swift */,
+				0E68661B206FA90E004A558C /* SideMenuController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		0E686626206FB056004A558C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0E686627206FB062004A558C /* ThemeManager.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		18D51B551BDB3A23D09B6F0A /* Frameworks */ = {
@@ -252,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E6865FB206F9881004A558C /* LaunchScreen.storyboard in Resources */,
+				0E686625206FB007004A558C /* Localization.strings in Resources */,
 				0E6865F8206F9881004A558C /* Assets.xcassets in Resources */,
 				0E6865F6206F987D004A558C /* Main.storyboard in Resources */,
 			);
@@ -330,6 +371,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E68661D206FA90E004A558C /* SideMenu.swift in Sources */,
+				0E686621206FA90E004A558C /* SideMenuCell.swift in Sources */,
+				0E686623206FAD4D004A558C /* LaunchScreenController.swift in Sources */,
+				0E68662A206FB217004A558C /* String+Localization.swift in Sources */,
+				0E686620206FA90E004A558C /* SideMenuController.swift in Sources */,
+				0E68661F206FA90E004A558C /* UIViewController+SideMenu.swift in Sources */,
+				0E686628206FB062004A558C /* ThemeManager.swift in Sources */,
 				0E6865F3206F987D004A558C /* MapController.swift in Sources */,
 				0E6865F1206F987D004A558C /* AppDelegate.swift in Sources */,
 			);
