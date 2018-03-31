@@ -23,6 +23,7 @@
 		0E68662B206FB5D3004A558C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E68662D206FB5D3004A558C /* Localization.strings */; };
 		0E686634206FB918004A558C /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686633206FB918004A558C /* AboutController.swift */; };
 		0E686637206FBAA6004A558C /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E686636206FBAA6004A558C /* About.storyboard */; };
+		0E686639206FC02F004A558C /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686638206FC02F004A558C /* MapService.swift */; };
 		A701F127865732B9E03123A6 /* Pods_lvivbikemap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		0E686632206FB859004A558C /* uk-UA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uk-UA"; path = "uk-UA.lproj/Localization.strings"; sourceTree = "<group>"; };
 		0E686633206FB918004A558C /* AboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
 		0E686636206FBAA6004A558C /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		0E686638206FC02F004A558C /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
 		4EE4D1B5CEAE50BADDE784DA /* Pods-lvivbikemap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.debug.xcconfig"; sourceTree = "<group>"; };
 		6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lvivbikemap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24DDEEE8DAD96B05C307E45 /* Pods-lvivbikemap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.release.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		0E686612206F9A60004A558C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0E686638206FC02F004A558C /* MapService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -327,11 +330,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -387,6 +392,7 @@
 				0E686634206FB918004A558C /* AboutController.swift in Sources */,
 				0E686621206FA90E004A558C /* SideMenuCell.swift in Sources */,
 				0E686623206FAD4D004A558C /* LaunchScreenController.swift in Sources */,
+				0E686639206FC02F004A558C /* MapService.swift in Sources */,
 				0E68662A206FB217004A558C /* String+Localization.swift in Sources */,
 				0E686620206FA90E004A558C /* SideMenuController.swift in Sources */,
 				0E68661F206FA90E004A558C /* UIViewController+SideMenu.swift in Sources */,
@@ -569,10 +575,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lvivbikemap/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -587,10 +590,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lvivbikemap/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -605,11 +605,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lvivbikemapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -625,11 +621,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lvivbikemapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

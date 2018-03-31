@@ -7,5 +7,6 @@ use_frameworks!
 
   pod 'GoogleMaps'
   pod 'RealmSwift'
+  pod 'Alamofire'
 
 end
