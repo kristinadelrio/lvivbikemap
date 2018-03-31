@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -123,6 +124,47 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoadCell" rowHeight="80" id="DBj-Dc-cGq" customClass="RoadCell" customModule="lvivbikemap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="118" width="270" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DBj-Dc-cGq" id="VZy-Wa-p3t">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vtQ-zJ-nbM">
+                                                    <rect key="frame" x="15" y="11" width="240" height="58"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8x-2z-RG8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="27"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.27514982876712329" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="0.0" alpha="0.85188356164383561" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbE-II-wE4">
+                                                            <rect key="frame" x="0.0" y="31" width="240" height="27"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.27514982876712329" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" white="0.0" alpha="0.85188356164383561" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vtQ-zJ-nbM" firstAttribute="top" secondItem="VZy-Wa-p3t" secondAttribute="topMargin" id="7ju-Lv-HwJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vtQ-zJ-nbM" secondAttribute="trailing" id="PzY-Mm-EbW"/>
+                                                <constraint firstAttribute="bottom" secondItem="vtQ-zJ-nbM" secondAttribute="bottom" constant="11" id="YnF-Wu-kah"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vtQ-zJ-nbM" secondAttribute="bottom" id="rX6-tn-eJV"/>
+                                                <constraint firstItem="vtQ-zJ-nbM" firstAttribute="leading" secondItem="VZy-Wa-p3t" secondAttribute="leadingMargin" id="sHP-Ya-B6Z"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="fromTextField" destination="v8x-2z-RG8" id="jW1-We-hOq"/>
+                                            <outlet property="toTextField" destination="fbE-II-wE4" id="Rea-t4-cks"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Ju4-z9-y5E" id="0Lc-ua-rBl"/>
@@ -150,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mhe-nj-5O0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-968" y="116"/>
+            <point key="canvasLocation" x="-968" y="115.59220389805098"/>
         </scene>
         <!--Launch Screen Controller-->
         <scene sceneID="2vF-0V-g5B">
@@ -187,6 +229,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGm-OD-aJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1607.2" y="116.49175412293854"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="be2-bM-II0">
+            <objects>
+                <viewController id="SAO-RC-Ud7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="szP-wE-VrR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="VV4-QD-g3k"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vsb-4I-Q9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1607" y="789"/>
         </scene>
         <!--About Controller-->
         <scene sceneID="gZw-ge-iBa">

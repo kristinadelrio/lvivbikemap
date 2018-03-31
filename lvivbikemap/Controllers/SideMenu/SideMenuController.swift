@@ -19,6 +19,8 @@ class SideMenuController: UIViewController {
         case feedback
         case about
         
+        case compileRoad
+        
         case bikeRental
         case bikeSharing
         case bikeRepair
@@ -31,27 +33,50 @@ class SideMenuController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private var filters = FiltersProvider.filters()
     private var isFiltering = false
+    private var isCompileRoad = false
     
-    private var skeleton: [Row] = [.addMarker, .buildRoad, .filter, .events, .news, .feedback, .about]
-    private var filering: [Row] = [.addMarker, .buildRoad, .filter, .bikeRental, .bikeSharing, .bikeRepair,
-                                   .bikeStops, .interestPlaces, .bicyclePaths, .bikeParking, .events,
-                                   .news, .feedback, .about]
+    
+    private var skeleton: [Row] {
+        if isFiltering {
+            return [.addMarker, .buildRoad, .filter, .bikeRental, .bikeSharing, .bikeRepair,
+                    .bikeStops, .interestPlaces, .bicyclePaths, .bikeParking, .events,
+                    .news, .feedback, .about]
+        } else if isCompileRoad {
+            return [.addMarker, .buildRoad, .compileRoad, .filter, .events, .news, .feedback, .about]
+        } else {
+            return [.addMarker, .buildRoad, .filter, .events, .news, .feedback, .about]
+        }
+    }
 }
 
 extension SideMenuController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch skeleton[indexPath.row] {
+        case .compileRoad:
+            return 80.0
+        default:
+            return 44.0
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        switch isFiltering ? filering[indexPath.row] : skeleton[indexPath.row] {
-        case .addMarker: print("Present")
-        case .buildRoad: print("Present")
-        case .events: print("Present")
-        case .feedback: print("Present")
+        switch skeleton[indexPath.row] {
+        case .addMarker:
+            print("TODO")
+        case .buildRoad:
+            isFiltering = isCompileRoad && isFiltering
+            isCompileRoad = !isCompileRoad
+            tableView.reloadData()
+        case .events: print("TODO")
+        case .feedback: print("TODO")
         case .filter:
+            isCompileRoad = isFiltering && isCompileRoad
             isFiltering = !isFiltering
             tableView.reloadData()
-        case .news: print("Present")
+        case .news: print("TODO")
         case .about:
             presentAbout()
         case .bikeRental:
@@ -75,6 +100,8 @@ extension SideMenuController: UITableViewDelegate {
         case .bikeParking:
             (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeParking
             FiltersProvider.update(filter: .bikeParking, value: !filters.bikeParking)
+        default:
+            break
         }
     }
     
@@ -89,11 +116,11 @@ extension SideMenuController: UITableViewDelegate {
 extension SideMenuController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isFiltering ? filering.count : skeleton.count
+        return skeleton.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch isFiltering ? filering[indexPath.row] : skeleton[indexPath.row] {
+        switch skeleton[indexPath.row] {
         case .addMarker:
             let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
             cell.configure(with: "Add new marker".localized, #imageLiteral(resourceName: "add"))
@@ -149,6 +176,9 @@ extension SideMenuController: UITableViewDataSource {
         case .bikeParking:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
             cell.configure(with: "Bike parking".localized, state: filters.bikeParking)
+            return cell
+        case .compileRoad:
+            let cell: RoadCell = tableView.dequeueReusableCell(at: indexPath)
             return cell
         }
     }

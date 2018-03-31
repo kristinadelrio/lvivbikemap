@@ -18,4 +18,8 @@ class ThemeManager {
     var unselectedColor: UIColor {
         return .clear
     }
+    
+    var borderColor: UIColor {
+        return UIColor.gray.withAlphaComponent(0.75)
+    }
 }

@@ -20,15 +20,5 @@ class SideMenuCell: UITableViewCell {
         textLabel?.text = text
         imageView?.image = image
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        if selected {
-            contentView.backgroundColor = ThemeManager.shared.selectedColor
-        } else {
-            contentView.backgroundColor = ThemeManager.shared.unselectedColor
-        }
-    }
 }
 
