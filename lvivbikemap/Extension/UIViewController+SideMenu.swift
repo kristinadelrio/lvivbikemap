@@ -22,9 +22,7 @@ extension UIViewController {
     }
     
     public func addMenuBarButtonItem() {
-        let leftButton = UIBarButtonItem(title: "Menu".localized, style: .plain,
-                                         target: self, action: #selector(toggle))
-        navigationItem.leftBarButtonItem = leftButton
+        navigationItem.leftBarButtonItem?.action = #selector(toggle)
     }
     
     @objc func toggle() {

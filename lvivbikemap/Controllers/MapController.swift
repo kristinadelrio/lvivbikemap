@@ -24,6 +24,8 @@ class MapController: UIViewController {
                     
                     let marker = GMSMarker()
                     marker.position = position
+                    marker.icon = #imageLiteral(resourceName: "cycling")
+                    
                     marker.appearAnimation = .none
                     marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
                     marker.title = point.feature?.properties?.name ?? "Temp"

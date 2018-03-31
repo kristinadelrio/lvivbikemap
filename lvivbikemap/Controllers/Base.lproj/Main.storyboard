@@ -19,27 +19,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTe-Db-YpZ" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cTe-Db-YpZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2MW-95-ivf"/>
+                            <constraint firstItem="cTe-Db-YpZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8jc-1J-i1E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cTe-Db-YpZ" secondAttribute="trailing" id="KkL-TH-kmC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cTe-Db-YpZ" secondAttribute="bottom" id="Y6L-TD-Ywd"/>
                             <constraint firstItem="cTe-Db-YpZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="m86-UJ-RBh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xyr-nN-aLz"/>
+                    <navigationItem key="navigationItem" id="xyr-nN-aLz">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="hna-1W-8Sl">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="cTe-Db-YpZ" id="saN-wg-UqZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="116"/>
+            <point key="canvasLocation" x="616.79999999999995" y="115.59220389805098"/>
         </scene>
         <!--Side Menu Controller-->
         <scene sceneID="Hzu-eT-gXz">
@@ -126,6 +130,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wex-Ir-lvn">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -183,5 +188,6 @@
     </scenes>
     <resources>
         <image name="cycling" width="16" height="16"/>
+        <image name="menu" width="24" height="24"/>
     </resources>
 </document>

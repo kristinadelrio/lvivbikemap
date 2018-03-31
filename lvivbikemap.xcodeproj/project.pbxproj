@@ -111,11 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				0E686626206FB056004A558C /* Common */,
-				0E686617206FA8FC004A558C /* SideMenu */,
 				0E6865FC206F9881004A558C /* Info.plist */,
 				0E686615206F9B0C004A558C /* Extension */,
-				0E686614206F9B04004A558C /* Realm */,
-				0E686613206F9A67004A558C /* Providers */,
 				0E686612206F9A60004A558C /* Services */,
 				0E686611206F9A06004A558C /* Resources */,
 				0E686610206F99DB004A558C /* Controllers */,
@@ -135,6 +132,7 @@
 		0E686610206F99DB004A558C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0E686617206FA8FC004A558C /* SideMenu */,
 				0E6865F2206F987D004A558C /* MapController.swift */,
 				0E6865F4206F987D004A558C /* Main.storyboard */,
 				0E686622206FAD4D004A558C /* LaunchScreenController.swift */,
@@ -161,20 +159,6 @@
 				0E686638206FC02F004A558C /* MapService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		0E686613206F9A67004A558C /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Providers;
-			sourceTree = "<group>";
-		};
-		0E686614206F9B04004A558C /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Realm;
 			sourceTree = "<group>";
 		};
 		0E686615206F9B0C004A558C /* Extension */ = {
@@ -575,7 +559,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lvivbikemap/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -590,7 +577,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lvivbikemap/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -605,7 +595,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lvivbikemapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -621,7 +615,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = lvivbikemapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemapTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
