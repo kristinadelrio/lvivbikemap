@@ -19,8 +19,8 @@ class MapController: UIViewController {
             DispatchQueue.main.async {
                 for point in points {
                     let position = CLLocationCoordinate2D(
-                        latitude: point.feature?.geametry?.coordinate[0] ?? 0,
-                        longitude: point.feature?.geametry?.coordinate[1] ?? 0)
+                        latitude: point.feature?.geametry?.coordinate[1] ?? 0,
+                        longitude: point.feature?.geametry?.coordinate[0] ?? 0)
                     
                     let marker = GMSMarker()
                     marker.position = position
@@ -71,7 +71,7 @@ extension MapController: CLLocationManagerDelegate {
         let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!,
                                               longitude:(location?.coordinate.longitude)!, zoom:14)
         mapView.animate(to: camera)
-        
+
         self.manager.stopUpdatingLocation()
         
         

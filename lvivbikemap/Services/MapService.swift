@@ -52,7 +52,6 @@ class MapService {
                     for row in arr {
                         let id = row.value(forKeyPath: "_id")
                         let version = row.value(forKeyPath: "__v")
-
                         let prop = Properties(name: row.value(forKeyPath: "feature.properties.name") as? String)
                         let geo = Geometry(type: row.value(forKeyPath: "feature.geometry.type") as? String,
                                            coordinate: row.value(forKeyPath: "feature.geometry.coordinates") as? [Double] ?? [0, 0])
