@@ -18,9 +18,9 @@
 		0E686620206FA90E004A558C /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68661B206FA90E004A558C /* SideMenuController.swift */; };
 		0E686621206FA90E004A558C /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68661C206FA90E004A558C /* SideMenuCell.swift */; };
 		0E686623206FAD4D004A558C /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686622206FAD4D004A558C /* LaunchScreenController.swift */; };
-		0E686625206FB007004A558C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E686624206FB007004A558C /* Localization.strings */; };
 		0E686628206FB062004A558C /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686627206FB062004A558C /* ThemeManager.swift */; };
 		0E68662A206FB217004A558C /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686629206FB217004A558C /* String+Localization.swift */; };
+		0E68662B206FB5D3004A558C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E68662D206FB5D3004A558C /* Localization.strings */; };
 		A701F127865732B9E03123A6 /* Pods_lvivbikemap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,9 +50,13 @@
 		0E68661B206FA90E004A558C /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		0E68661C206FA90E004A558C /* SideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		0E686622206FAD4D004A558C /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
-		0E686624206FB007004A558C /* Localization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
 		0E686627206FB062004A558C /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		0E686629206FB217004A558C /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		0E68662C206FB5D3004A558C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		0E68662E206FB5D8004A558C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localization.strings; sourceTree = "<group>"; };
+		0E686630206FB842004A558C /* uk-UA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uk-UA"; path = "uk-UA.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0E686631206FB847004A558C /* uk-UA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uk-UA"; path = "uk-UA.lproj/Main.strings"; sourceTree = "<group>"; };
+		0E686632206FB859004A558C /* uk-UA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "uk-UA"; path = "uk-UA.lproj/Localization.strings"; sourceTree = "<group>"; };
 		4EE4D1B5CEAE50BADDE784DA /* Pods-lvivbikemap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.debug.xcconfig"; sourceTree = "<group>"; };
 		6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lvivbikemap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24DDEEE8DAD96B05C307E45 /* Pods-lvivbikemap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.release.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,7 +142,7 @@
 				0E6865F0206F987D004A558C /* AppDelegate.swift */,
 				0E6865F7206F9881004A558C /* Assets.xcassets */,
 				0E6865F9206F9881004A558C /* LaunchScreen.storyboard */,
-				0E686624206FB007004A558C /* Localization.strings */,
+				0E68662D206FB5D3004A558C /* Localization.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -274,6 +278,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"uk-UA",
 			);
 			mainGroup = 0E6865E4206F987D004A558C;
 			productRefGroup = 0E6865EE206F987D004A558C /* Products */;
@@ -292,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E6865FB206F9881004A558C /* LaunchScreen.storyboard in Resources */,
-				0E686625206FB007004A558C /* Localization.strings in Resources */,
+				0E68662B206FB5D3004A558C /* Localization.strings in Resources */,
 				0E6865F8206F9881004A558C /* Assets.xcassets in Resources */,
 				0E6865F6206F987D004A558C /* Main.storyboard in Resources */,
 			);
@@ -406,6 +411,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0E6865F5206F987D004A558C /* Base */,
+				0E686631206FB847004A558C /* uk-UA */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -414,8 +420,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				0E6865FA206F9881004A558C /* Base */,
+				0E686630206FB842004A558C /* uk-UA */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0E68662D206FB5D3004A558C /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E68662C206FB5D3004A558C /* en */,
+				0E68662E206FB5D8004A558C /* Base */,
+				0E686632206FB859004A558C /* uk-UA */,
+			);
+			name = Localization.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -425,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -485,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

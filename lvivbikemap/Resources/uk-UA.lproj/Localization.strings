@@ -1,0 +1,17 @@
+/* 
+  Localization.strings
+  lvivbikemap
+
+  Created by Kristina Del Rio Albrechet on 3/31/18.
+  
+*/
+
+"Menu" = "Меню";
+
+"Add new marker" = "Додати маркер";
+"Build new road" = "Побудувати шлях";
+"Events" = "Події";
+"Send us feedback" = "Надіслати відгук";
+"Filter" = "Відфільтрувати";
+"News feed" = "Новини";
+"About us" = "Про нас";
