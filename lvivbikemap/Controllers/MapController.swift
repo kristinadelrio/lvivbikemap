@@ -12,70 +12,94 @@ import CoreLocation
 class MapController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
-    
-    var points: [Point]? {
-        didSet {
-            guard let points = points else { return }
-            DispatchQueue.main.async {
-                for point in points {
-                    let position = CLLocationCoordinate2D(
-                        latitude: point.feature?.geametry?.coordinate[1] ?? 0,
-                        longitude: point.feature?.geametry?.coordinate[0] ?? 0)
-                    
-                    let marker = GMSMarker()
-                    marker.position = position
-                    marker.icon = #imageLiteral(resourceName: "cycling")
-                    
-                    marker.appearAnimation = .none
-                    marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
-                    marker.title = point.feature?.properties?.name ?? "Temp"
-                    marker.map = self.mapView
-                }
-            }
-        }
-    }
+    @IBOutlet weak var menuButton: UIButton!
     
     let manager = CLLocationManager()
+    var points: [Point]? = nil {
+        didSet {
+            addMarkers()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initialSetup()
-        configureUI()
+        manager.delegate = self
         requestUserLocation()
-        addMenuBarButtonItem()
+        loadPoint()
+    }
+    
+    /// Show side menu on tap
+    @IBAction func showMenu(_ sender: Any) {
+        toggle()
+    }
+    
+    /// Loads velo points
+    private func loadPoint() {
         MapService.shared.getPoints { [weak self] (err, points) in
             self?.points = points
         }
     }
     
-    func configureUI() {
-        
+    /// Adds places markers on the map
+    private func addMarkers() {
+        DispatchQueue.main.async {
+            self.points?.forEach({
+                let lat = $0.feature?.geametry?.coordinate[1] ?? 0
+                let long = $0.feature?.geametry?.coordinate[0] ?? 0
+                let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
+
+                let marker = GMSMarker()
+                marker.position = position
+                marker.appearAnimation = .none
+                marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+                marker.title = $0.feature?.properties?.name ?? ""
+                marker.map = self.mapView
+            })
+        }
     }
     
-    func initialSetup() {
-         manager.delegate = self
-    }
-    
-    func requestUserLocation() {
-        manager.requestWhenInUseAuthorization()
+    /// Requests user location
+    private func requestUserLocation() {
         manager.requestAlwaysAuthorization()
+        manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-        mapView.isMyLocationEnabled = true
     }
 }
 
+extension MapController {
+
+    func toggle() {
+        sideMenuController()?.toggleSideMenu()
+    }
+    
+    func open() {
+        sideMenuController()?.openSideMenu()
+    }
+    
+    func close() {
+        sideMenuController()?.closeSideMenu()
+    }
+}
 
 extension MapController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
-        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!,
-                                              longitude:(location?.coordinate.longitude)!, zoom:14)
+        let lat = location?.coordinate.latitude ?? 0.0
+        let long = location?.coordinate.longitude ?? 0.0
+        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 14.0)
+        changeLocationStatus()
         mapView.animate(to: camera)
-
         self.manager.stopUpdatingLocation()
-        
-        
+    }
+    
+    func changeLocationStatus() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedAlways, .authorizedWhenInUse:
+            mapView.isMyLocationEnabled = true
+        default:
+            mapView.isMyLocationEnabled = false
+        }
     }
 }

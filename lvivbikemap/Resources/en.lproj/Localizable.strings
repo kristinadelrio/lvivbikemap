@@ -6,8 +6,6 @@
   
 */
 
-"Menu" = "Menu";
-
 "Add new marker" = "Add new marker";
 "Build new road" = "Build new road";
 "Events" = "Events";
@@ -15,3 +13,11 @@
 "Filter" = "Filter";
 "News feed" = "News feed";
 "About us" = "About us";
+
+"Bike rental" = "Bike rental";
+"Public bike sharing" = "Public bike sharing";
+"Bike repair" = "Bike repair";
+"Usefull stops" = "Usefull stops";
+"Place of interest" = "Place of interest";
+"Bicycle path" = "Bicycle path";
+"Bike parking" = "Bike parking";

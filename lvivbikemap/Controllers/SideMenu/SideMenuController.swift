@@ -10,7 +10,7 @@ import UIKit
 
 class SideMenuController: UIViewController {
     
-    @IBOutlet weak var controllersTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     enum Row: Int {
         case addMarker
@@ -20,17 +20,22 @@ class SideMenuController: UIViewController {
         case news
         case feedback
         case about
+
+        case bikeRental
+        case bikeSharing
+        case bikeRepair
+        case bikeStops
+        case interestPlaces
+        case bicyclePaths
+        case bikeParking
     }
     
     var skeleton: [Row] = [.addMarker, .buildRoad, .filter, .events, .news, .feedback, .about]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var filering: [Row] = [.addMarker, .buildRoad, .filter, .bikeRental,
+                           .bikeSharing, .bikeRepair, .bikeStops, .interestPlaces, .bicyclePaths,
+                           .bikeParking, .events, .news, .feedback, .about]
 
-        controllersTableView.selectRow(at: IndexPath(row: 0, section: 0),
-                                       animated: true, scrollPosition: .top)
-        
-    }
+    var isFiltering: Bool = false
 }
 
 extension SideMenuController: UITableViewDelegate {
@@ -40,55 +45,93 @@ extension SideMenuController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch skeleton[indexPath.row] {
+        switch isFiltering ? filering[indexPath.row] : skeleton[indexPath.row] {
         case .addMarker: print("Present")
         case .buildRoad: print("Present")
         case .events: print("Present")
         case .feedback: print("Present")
-        case .filter: print("Present")
+        case .filter:
+            isFiltering = !isFiltering
+            tableView.reloadData()
         case .news: print("Present")
         case .about:
-            
             if let controller = storyboard?.instantiateViewController(
                 withIdentifier: "AboutController") {
                 sideMenuController()?.closeSideMenu()
-                sideMenuController()?.mainViewController?.present(controller, animated: true, completion: nil)
-                
-                
+                sideMenuController()?.mainViewController?.present(
+                    controller, animated: true, completion: nil)
             }
+        default:
+            break
         }
-    }
-    
-    
-    //
-    func changeViewController() {
-        
     }
 }
 
 extension SideMenuController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return skeleton.count
+        return isFiltering ? filering.count : skeleton.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier:
-            "sideMenuCell", for: indexPath) as? SideMenuCell else {
-                return UITableViewCell()
+        switch isFiltering ? filering[indexPath.row] : skeleton[indexPath.row] {
+        case .addMarker:
+            let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Add new marker".localized, #imageLiteral(resourceName: "add"))
+            return cell
+        case .buildRoad:
+            let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Build new road".localized, #imageLiteral(resourceName: "ic_timeline"))
+            return cell
+        case .events:
+            let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Events".localized, #imageLiteral(resourceName: "ic_event"))
+            return cell
+        case .feedback:
+            let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Send us feedback".localized, #imageLiteral(resourceName: "ic_feedback"))
+            return cell
+        case .filter:
+            let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Filter".localized, #imageLiteral(resourceName: "ic_filter_list"))
+            return cell
+        case .news:
+            let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "News feed".localized, #imageLiteral(resourceName: "ic_dashboard"))
+            return cell
+        case .about:
+            let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "About us".localized, #imageLiteral(resourceName: "ic_info"))
+            return cell
+        case .bikeRental:
+            let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Bike rental".localized, state: false)
+            return cell
+        case .bikeSharing:
+            let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Public bike sharing".localized, state: false)
+            return cell
+        case .bikeRepair:
+            let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Bike repair".localized, state: false)
+            return cell
+        case .bikeStops:
+            let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Usefull stops".localized, state: false)
+            return cell
+        case .interestPlaces:
+            let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Place of interest".localized, state: false)
+            return cell
+        case .bicyclePaths:
+            let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Bicycle path".localized, state: false)
+            return cell
+        case .bikeParking:
+            let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
+            cell.configure(with: "Bike parking".localized, state: false)
+            return cell
         }
-        
-        switch skeleton[indexPath.row] {
-        case .addMarker: cell.configure(with: "Add new marker".localized)
-        case .buildRoad: cell.configure(with: "Build new road".localized)
-        case .events: cell.configure(with: "Events".localized)
-        case .feedback: cell.configure(with: "Send us feedback".localized)
-        case .filter: cell.configure(with: "Filter".localized)
-        case .news: cell.configure(with: "News feed".localized)
-        case .about: cell.configure(with: "About us".localized)
-        }
-        
-        return cell
     }
 }
 

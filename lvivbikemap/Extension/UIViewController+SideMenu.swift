@@ -20,21 +20,5 @@ extension UIViewController {
         }
         return nil
     }
-    
-    public func addMenuBarButtonItem() {
-        navigationItem.leftBarButtonItem?.action = #selector(toggle)
-    }
-    
-    @objc func toggle() {
-        sideMenuController()?.toggleSideMenu()
-    }
-    
-    func open() {
-        sideMenuController()?.openSideMenu()
-    }
-    
-    func close() {
-        sideMenuController()?.closeSideMenu()
-    }
 }
 

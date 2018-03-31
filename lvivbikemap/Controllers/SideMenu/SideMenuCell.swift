@@ -9,22 +9,16 @@
 import UIKit
 
 class SideMenuCell: UITableViewCell {
-    
-    @IBOutlet weak var sceneName: UILabel!
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
-        sceneName.text = ""
+        textLabel?.text = ""
+        imageView?.image = nil
     }
 
-    func configure(with text: String) {
-        sceneName.text = text
+    func configure(with text: String, _ image: UIImage? = nil) {
+        textLabel?.text = text
+        imageView?.image = image
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

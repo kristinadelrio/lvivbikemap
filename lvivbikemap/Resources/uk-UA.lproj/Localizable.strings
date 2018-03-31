@@ -1,12 +1,10 @@
 /* 
-  Localization.strings
+  Localizable.strings
   lvivbikemap
 
   Created by Kristina Del Rio Albrechet on 3/31/18.
   
 */
-
-"Menu" = "Меню";
 
 "Add new marker" = "Додати маркер";
 "Build new road" = "Побудувати шлях";
@@ -15,3 +13,11 @@
 "Filter" = "Відфільтрувати";
 "News feed" = "Новини";
 "About us" = "Про нас";
+
+"Bike rental" = "Велооренда";
+"Public bike sharing" = "Велообмін";
+"Bike repair" = "Велоремон";
+"Usefull stops" = "Корисні зупинки";
+"Place of interest" = "Цікаві місця";
+"Bicycle path" = "Велодоріжки";
+"Bike parking" = "Велопаркінг";

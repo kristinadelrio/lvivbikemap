@@ -9,7 +9,7 @@
 import UIKit
 
 let kSideMenuWidth: CGFloat = 270.0
-let kContentViewOpacity: CGFloat = 0.5
+let kContentViewOpacity: CGFloat = 0.1
 let kAnimationDuration: Double = 0.4
 let kPointOfNoReturnWidth: CGFloat = 50.0
 let kOpacityViewBackgroundColor: UIColor = .black
