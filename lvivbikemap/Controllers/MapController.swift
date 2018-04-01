@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMaps
+import RealmSwift
 import CoreLocation
 
 class MapController: UIViewController {
@@ -14,6 +15,7 @@ class MapController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var menuButton: UIButton!
     
+    private var filtersToken: NotificationToken?
     let manager = CLLocationManager()
     var points: [Point]? = nil {
         didSet {
@@ -26,6 +28,7 @@ class MapController: UIViewController {
         
         manager.delegate = self
         requestUserLocation()
+        configureService()
         loadPoint()
     }
     
@@ -100,6 +103,22 @@ extension MapController: CLLocationManagerDelegate {
             mapView.isMyLocationEnabled = true
         default:
             mapView.isMyLocationEnabled = false
+        }
+    }
+}
+
+extension MapController {
+    
+    func configureService() {
+        filtersToken = FiltersProvider.filters().observe(updateValues(_:))
+    }
+    
+    func updateValues(_ change: ObjectChange) {
+        switch change {
+        case .change(let properties):
+            print("Need to filter: \(properties)")
+        default:
+            break
         }
     }
 }
