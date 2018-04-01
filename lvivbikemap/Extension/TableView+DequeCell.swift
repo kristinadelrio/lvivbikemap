@@ -10,7 +10,8 @@ import UIKit
 extension UITableView {
     
     func dequeueReusableCell<T>(at indexPath: IndexPath) -> T {
-        guard let cell = dequeueReusableCell(withIdentifier: String(describing: T.self), for: indexPath) as? T else {
+        guard let cell = dequeueReusableCell(withIdentifier:
+            String(describing: T.self), for: indexPath) as? T else {
             fatalError("TableViewHandler: Can't get data for cell of \(T.self) type")
         }
         

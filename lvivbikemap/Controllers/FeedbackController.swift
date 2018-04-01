@@ -8,11 +8,14 @@
 import UIKit
 
 class FeedbackController: UIViewController {
-
+    
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navBar.topItem?.title = "Send us feedback".localized
+
     }
     
     @IBAction func onClose(_ sender: UIBarButtonItem) {

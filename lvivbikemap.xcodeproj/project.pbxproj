@@ -134,6 +134,7 @@
 				0E686626206FB056004A558C /* Common */,
 				0E6865FC206F9881004A558C /* Info.plist */,
 				0E686615206F9B0C004A558C /* Extension */,
+				0E68664120702017004A558C /* Models */,
 				0E686612206F9A60004A558C /* Services */,
 				0E686611206F9A06004A558C /* Resources */,
 				0E686610206F99DB004A558C /* Controllers */,
@@ -179,7 +180,6 @@
 		0E686612206F9A60004A558C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				0E68664120702017004A558C /* Models */,
 				0E686638206FC02F004A558C /* MapService.swift */,
 				0E68664620702147004A558C /* FiltersProvider.swift */,
 			);

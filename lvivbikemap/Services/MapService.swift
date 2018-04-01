@@ -29,7 +29,6 @@ struct Point {
     let id: String?
     let feature: Feature?
     let version: String?
-
 }
 
 class MapService {

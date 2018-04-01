@@ -274,6 +274,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VV4-QD-g3k"/>
                     </view>
+                    <connections>
+                        <outlet property="navBar" destination="myc-pt-sEA" id="aNA-Fw-bu4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vsb-4I-Q9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -308,20 +311,38 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Xee-uK-hmt">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqo-Yl-c0F">
+                                <rect key="frame" x="187.5" y="333.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="09f-UM-Mpz" firstAttribute="bottom" secondItem="mPa-1t-6bP" secondAttribute="bottom" id="Civ-nX-X7N"/>
                             <constraint firstItem="Zv2-KP-9Qc" firstAttribute="trailing" secondItem="09f-UM-Mpz" secondAttribute="trailing" id="Pam-lQ-Xxx"/>
                             <constraint firstItem="Zv2-KP-9Qc" firstAttribute="top" secondItem="09f-UM-Mpz" secondAttribute="top" id="TKN-7f-wLq"/>
+                            <constraint firstItem="Xee-uK-hmt" firstAttribute="centerX" secondItem="5I4-8M-bgD" secondAttribute="centerX" id="Vfa-r4-T3l"/>
+                            <constraint firstItem="Fqo-Yl-c0F" firstAttribute="centerX" secondItem="5I4-8M-bgD" secondAttribute="centerX" id="XGS-MF-2sk"/>
+                            <constraint firstItem="Xee-uK-hmt" firstAttribute="centerY" secondItem="5I4-8M-bgD" secondAttribute="centerY" id="YLX-Xx-kBx"/>
                             <constraint firstItem="Zv2-KP-9Qc" firstAttribute="leading" secondItem="09f-UM-Mpz" secondAttribute="leading" id="ZgM-co-77I"/>
                             <constraint firstItem="mPa-1t-6bP" firstAttribute="leading" secondItem="09f-UM-Mpz" secondAttribute="leading" id="aMB-He-oP4"/>
+                            <constraint firstItem="Fqo-Yl-c0F" firstAttribute="centerY" secondItem="5I4-8M-bgD" secondAttribute="centerY" id="fix-3L-HLE"/>
                             <constraint firstItem="mPa-1t-6bP" firstAttribute="top" secondItem="Zv2-KP-9Qc" secondAttribute="bottom" id="hWV-Fb-yeQ"/>
+                            <constraint firstItem="Fqo-Yl-c0F" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="09f-UM-Mpz" secondAttribute="leading" constant="20" id="r66-CK-bzg"/>
                             <constraint firstItem="09f-UM-Mpz" firstAttribute="trailing" secondItem="mPa-1t-6bP" secondAttribute="trailing" id="wPl-xf-Y6r"/>
+                            <constraint firstItem="09f-UM-Mpz" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fqo-Yl-c0F" secondAttribute="trailing" constant="20" id="zxz-2X-yNq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="09f-UM-Mpz"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Xee-uK-hmt" id="ToB-tY-iRX"/>
+                        <outlet property="errorLabel" destination="Fqo-Yl-c0F" id="mq8-7f-LED"/>
+                        <outlet property="navBar" destination="Zv2-KP-9Qc" id="S7c-Te-iJJ"/>
                         <outlet property="webView" destination="mPa-1t-6bP" id="m2Q-YE-HQg"/>
                     </connections>
                 </viewController>
@@ -355,6 +376,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OB2-9U-2Pa"/>
                     </view>
+                    <connections>
+                        <outlet property="navBar" destination="DIh-xn-Ovr" id="NBU-kH-0As"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J2E-wX-QGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -401,6 +425,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yua-Rm-QDX"/>
                     </view>
+                    <connections>
+                        <outlet property="navBar" destination="Zt6-t3-PTr" id="L0L-Cu-ozn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5s0-jO-jUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -408,7 +435,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cycling" width="32" height="32"/>
+        <image name="cycling" width="64" height="64"/>
         <image name="ic_check_box_outline_blank" width="24" height="24"/>
         <image name="ic_chevron_left" width="16" height="16"/>
         <image name="menu" width="24" height="24"/>

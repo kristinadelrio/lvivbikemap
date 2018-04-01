@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     
-    public func sideMenuController() -> SideMenu? {
+    public var sideMenu: SideMenu? {
         var viewController: UIViewController? = self
         while viewController != nil {
             if viewController is SideMenu {

@@ -9,9 +9,12 @@ import UIKit
 
 class EventsController: UIViewController {
 
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+       navBar.topItem?.title = "Events".localized
     }
     
     @IBAction func onClose(_ sender: UIBarButtonItem) {

@@ -70,15 +70,15 @@ class MapController: UIViewController {
 extension MapController {
 
     func toggle() {
-        sideMenuController()?.toggleSideMenu()
+        sideMenu?.toggleSideMenu()
     }
     
     func open() {
-        sideMenuController()?.openSideMenu()
+        sideMenu?.openSideMenu()
     }
     
     func close() {
-        sideMenuController()?.closeSideMenu()
+        sideMenu?.closeSideMenu()
     }
 }
 

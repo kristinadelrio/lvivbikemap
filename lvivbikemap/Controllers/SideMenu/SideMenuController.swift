@@ -110,8 +110,8 @@ extension SideMenuController: UITableViewDelegate {
     
     private func present(with identifier: String) {
         if let controller = storyboard?.instantiateViewController(withIdentifier: identifier) {
-            sideMenuController()?.closeSideMenu()
-            sideMenuController()?.mainVC?.present(controller, animated: true, completion: nil)
+            sideMenu?.closeSideMenu()
+            sideMenu?.mainVC?.present(controller, animated: true, completion: nil)
         }
     }
 }
