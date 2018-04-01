@@ -95,9 +95,8 @@ extension AboutController: MFMailComposeViewControllerDelegate {
         self.present(composeVC, animated: true, completion: nil)
     }
     
-    private func mailComposeController(controller: MFMailComposeViewController,
-                               didFinishWithResult result: MFMailComposeResult, error: Error?) {
-
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
+  
 }
