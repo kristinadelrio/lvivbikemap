@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import MessageUI
 
 class AboutController: UIViewController {
 
@@ -65,7 +66,7 @@ extension AboutController: UITableViewDelegate {
         
         switch skeleton[indexPath.row] {
         case .facebook:
-            guard let url = URL(string: "https://www.facebook.com/VeloLvivOnline") else {
+            guard let url = URL(string: "https://www.facebook.com/comfycity.lviv/") else {
                 return
             }
             
@@ -74,13 +75,29 @@ extension AboutController: UITableViewDelegate {
             self.present(safari, animated: true, completion: nil)
             
         case .mail:
-            guard let url = URL(string: "https://plus.google.com/104315284610461068961") else {
+            if !MFMailComposeViewController.canSendMail() {
+                print("Mail services are not available")
                 return
             }
-            
-            let safari = SFSafariViewController(url: url)
-            safari.dismissButtonStyle = .close
-            self.present(safari, animated: true, completion: nil)
+            sendEmail()
         }
+    }
+}
+
+extension AboutController: MFMailComposeViewControllerDelegate {
+    
+    func sendEmail() {
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        composeVC.setToRecipients(["comfycity@ukr.net"])
+        composeVC.setSubject("Hello, VeloLviv!")
+        composeVC.setMessageBody("This is my message body!", isHTML: false)
+        self.present(composeVC, animated: true, completion: nil)
+    }
+    
+    private func mailComposeController(controller: MFMailComposeViewController,
+                               didFinishWithResult result: MFMailComposeResult, error: Error?) {
+
+        controller.dismiss(animated: true, completion: nil)
     }
 }
