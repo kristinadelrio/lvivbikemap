@@ -29,6 +29,7 @@ struct Point {
     let id: String?
     let feature: Feature?
     let version: String?
+    let categoryID: String?
 }
 
 class MapService {
@@ -49,13 +50,14 @@ class MapService {
                 if let arr = json as? [AnyObject] {
                     var points = [Point]()
                     for row in arr {
-                        let id = row.value(forKeyPath: "_id")
-                        let version = row.value(forKeyPath: "__v")
+                        let id = row.value(forKeyPath: "_id") as? String
+                        let version = row.value(forKeyPath: "__v") as? String
                         let prop = Properties(name: row.value(forKeyPath: "feature.properties.name") as? String)
                         let geo = Geometry(type: row.value(forKeyPath: "feature.geometry.type") as? String,
                                            coordinate: row.value(forKeyPath: "feature.geometry.coordinates") as? [Double] ?? [0, 0])
                         let feature = Feature(geametry: geo, properties: prop)
-                        let point = Point(id: id as? String, feature: feature, version: version as? String)
+                        let categoryID = row.value(forKeyPath: "feature.properties.category.id") as? String
+                        let point = Point(id: id, feature: feature, version: version, categoryID: categoryID)
                         points.append(point)
 
                     }

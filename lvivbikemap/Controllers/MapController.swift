@@ -21,6 +21,20 @@ class MapController: UIViewController {
     let manager = CLLocationManager()
     var points: [Point]? = nil {
         didSet {
+            let iconGenerator = GMUDefaultClusterIconGenerator()
+            let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
+            let renderer = GMUDefaultClusterRenderer(
+                mapView: mapView, clusterIconGenerator: iconGenerator)
+            clusterManager = GMUClusterManager(
+                map: mapView, algorithm: algorithm, renderer: renderer)
+            filtered = points
+            
+        }
+    }
+    
+    var filtered: [Point]? = nil {
+        didSet {
+            clusterManager.clearItems()
             clusterize()
         }
     }
@@ -48,14 +62,6 @@ class MapController: UIViewController {
     
     /// Puts markers on the map in cluster
     private func clusterize() {
-        let iconGenerator = GMUDefaultClusterIconGenerator()
-        let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
-        let renderer = GMUDefaultClusterRenderer(
-            mapView: mapView, clusterIconGenerator: iconGenerator)
-        
-        clusterManager = GMUClusterManager(
-            map: mapView, algorithm: algorithm, renderer: renderer)
-        
         generateMarkers()
         clusterManager.cluster()
     }
@@ -63,7 +69,7 @@ class MapController: UIViewController {
     /// Adds places markers on the map
     private func generateMarkers() {
         DispatchQueue.main.async {
-            self.points?.forEach({
+            self.filtered?.forEach({
                 let lat = $0.feature?.geametry?.coordinate[1] ?? 0
                 let long = $0.feature?.geametry?.coordinate[0] ?? 0
                 let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
@@ -119,6 +125,16 @@ extension MapController: CLLocationManagerDelegate {
     }
 }
 
+enum Category: String {
+    case sharing = "5abfa2fcf6c9d8220a99a9f9"
+    case repair = "5abfa2fcf6c9d8220a99a9fa"
+    case rental = "5abfa2fcf6c9d8220a99a9f8" // and store
+    case parking = "5abfa2fcf6c9d8220a99a9fe"
+    case path = "5abfa2fcf6c9d8220a99a9fd"
+    case stops = "5abfa2fcf6c9d8220a99a9fb"
+    case interests = "5abfa2fcf6c9d8220a99a9fc"
+}
+
 extension MapController {
     
     func configureService() {
@@ -132,5 +148,40 @@ extension MapController {
         default:
             break
         }
+    }
+    
+    func filter() {
+        let filters = FiltersProvider.filters()
+        var filteredPoints = points
+        
+        if !filters.bikeStops {
+            filteredPoints = filtered?.filter({ $0.categoryID ?? "" == Category.stops.rawValue })
+        }
+        
+        if !filters.bikeRental {
+            filteredPoints = filtered?.filter({ $0.categoryID ?? "" == Category.rental.rawValue })
+        }
+        
+        if !filters.bikeParking {
+            filteredPoints = filtered?.filter({ $0.categoryID ?? "" == Category.parking.rawValue })
+        }
+        
+        if !filters.bicyclePaths {
+            filteredPoints = filtered?.filter({ $0.categoryID ?? "" == Category.path.rawValue })
+        }
+        
+        if !filters.bikeSharing {
+            filteredPoints = filtered?.filter({ $0.categoryID ?? "" == Category.sharing.rawValue })
+        }
+        
+        if !filters.bikeRepair {
+            filteredPoints = filtered?.filter({ $0.categoryID ?? "" == Category.repair.rawValue })
+        }
+        
+        if !filters.interestPlaces {
+            filteredPoints = filtered?.filter({ $0.categoryID ?? "" == Category.interests.rawValue })
+        }
+        
+        filtered = filteredPoints
     }
 }
