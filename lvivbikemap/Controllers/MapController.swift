@@ -15,11 +15,13 @@ class MapController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var menuButton: UIButton!
     
+    private var clusterManager: GMUClusterManager!
     private var filtersToken: NotificationToken?
+    
     let manager = CLLocationManager()
     var points: [Point]? = nil {
         didSet {
-            addMarkers()
+            clusterize()
         }
     }
     
@@ -44,20 +46,30 @@ class MapController: UIViewController {
         }
     }
     
+    /// Puts markers on the map in cluster
+    private func clusterize() {
+        let iconGenerator = GMUDefaultClusterIconGenerator()
+        let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
+        let renderer = GMUDefaultClusterRenderer(
+            mapView: mapView, clusterIconGenerator: iconGenerator)
+        
+        clusterManager = GMUClusterManager(
+            map: mapView, algorithm: algorithm, renderer: renderer)
+        
+        generateMarkers()
+        clusterManager.cluster()
+    }
+    
     /// Adds places markers on the map
-    private func addMarkers() {
+    private func generateMarkers() {
         DispatchQueue.main.async {
             self.points?.forEach({
                 let lat = $0.feature?.geametry?.coordinate[1] ?? 0
                 let long = $0.feature?.geametry?.coordinate[0] ?? 0
                 let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
-
-                let marker = GMSMarker()
-                marker.position = position
-                marker.appearAnimation = .none
-                marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
-                marker.title = $0.feature?.properties?.name ?? ""
-                marker.map = self.mapView
+                let name = $0.feature?.properties?.name ?? ""
+                let item = ClusterPoint(position: position, name: name)
+                self.clusterManager.add(item)
             })
         }
     }

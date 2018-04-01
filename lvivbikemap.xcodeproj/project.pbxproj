@@ -59,6 +59,7 @@
 		0E6866E02070C6AA004A558C /* GMUGeoJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6866C12070C6AA004A558C /* GMUGeoJSONParser.m */; };
 		0E6866E12070C6AA004A558C /* GQTPointQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6866C42070C6AA004A558C /* GQTPointQuadTree.m */; };
 		0E6866E22070C6AA004A558C /* GQTPointQuadTreeChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6866C62070C6AA004A558C /* GQTPointQuadTreeChild.m */; };
+		0E6866E52070CC46004A558C /* ClusterPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6866E42070CC46004A558C /* ClusterPoint.swift */; };
 		A701F127865732B9E03123A6 /* Pods_lvivbikemap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +172,7 @@
 		0E6866C92070C6AA004A558C /* GQTPointQuadTreeChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTPointQuadTreeChild.h; sourceTree = "<group>"; };
 		0E6866CA2070C6AA004A558C /* GQTBounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTBounds.h; sourceTree = "<group>"; };
 		0E6866E32070C6DE004A558C /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
+		0E6866E42070CC46004A558C /* ClusterPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterPoint.swift; sourceTree = "<group>"; };
 		4EE4D1B5CEAE50BADDE784DA /* Pods-lvivbikemap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.debug.xcconfig"; sourceTree = "<group>"; };
 		6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lvivbikemap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24DDEEE8DAD96B05C307E45 /* Pods-lvivbikemap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.release.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.release.xcconfig"; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				0E686633206FB918004A558C /* AboutController.swift */,
 				0E68664D2070370E004A558C /* FeedbackController.swift */,
 				0E6866542070376B004A558C /* NewsController.swift */,
+				0E6866E42070CC46004A558C /* ClusterPoint.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				0E6866CC2070C6AA004A558C /* GMUGradient.m in Sources */,
 				0E6866DF2070C6AA004A558C /* GMULineString.m in Sources */,
 				0E6866D72070C6AA004A558C /* GMUGeometryRenderer.m in Sources */,
+				0E6866E52070CC46004A558C /* ClusterPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
