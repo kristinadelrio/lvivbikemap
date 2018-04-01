@@ -10,7 +10,7 @@ import UIKit
 class LaunchScreenController: UIViewController {
     
     @IBOutlet weak var veloIcon: UIImageView!
-    @IBOutlet weak var logo: UILabel!
+    @IBOutlet weak var logo: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

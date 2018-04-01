@@ -17,12 +17,14 @@
 
 "Bike rental" = "Велооренда";
 "Public bike sharing" = "Велообмін";
-"Bike repair" = "Велоремон";
+"Bike repair" = "Велоремонт";
 "Usefull stops" = "Корисні зупинки";
-"Place of interest" = "Цікаві місця";
-"Bicycle path" = "Велодоріжки";
-"Bike parking" = "Велопаркінг";
+"Places of interest" = "Цікаві місця";
+"Bicycle paths" = "Велодоріжки";
+"Bike parkings" = "Велопаркінг";
 
 "Our page in Facebook" = "Ми в Facebook";
-"Our page in Google+" = "Ми в Google+";
+"Mail us" = "Напишіть нам";
 
+"Hello, Lviv Bike Map!" = "Привіт, Lviv Bike Map!";
+"This is my message body!" = "Напішіть текст тут!";

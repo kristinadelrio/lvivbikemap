@@ -263,22 +263,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VeloLviv" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLW-Ea-yif">
-                                <rect key="frame" x="136.5" y="315.5" width="103" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSm-hJ-4Z1">
-                                <rect key="frame" x="135.5" y="312.5" width="105" height="1"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man-cycling_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Oft-Xe-5bQ">
+                                <rect key="frame" x="87" y="233.5" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="Y66-uW-wBA"/>
-                                    <constraint firstAttribute="width" constant="105" id="rMI-Es-at5"/>
+                                    <constraint firstAttribute="height" constant="200" id="RKz-i6-7bf"/>
+                                    <constraint firstAttribute="width" constant="200" id="mhx-eG-mTN"/>
                                 </constraints>
-                            </view>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycling" translatesAutoresizingMaskIntoConstraints="NO" id="koh-51-e5K">
-                                <rect key="frame" x="167" y="270.5" width="40" height="40"/>
+                                <rect key="frame" x="167" y="313.5" width="40" height="40"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1M7-aj-BuW"/>
                                     <constraint firstAttribute="width" constant="40" id="Dqw-dt-hCl"/>
@@ -287,17 +281,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cSm-hJ-4Z1" firstAttribute="top" secondItem="koh-51-e5K" secondAttribute="bottom" constant="2" id="CBN-6r-rOT"/>
-                            <constraint firstItem="cSm-hJ-4Z1" firstAttribute="centerX" secondItem="gJp-Ot-giF" secondAttribute="centerX" id="Lu1-rL-PG2"/>
-                            <constraint firstItem="TLW-Ea-yif" firstAttribute="top" secondItem="cSm-hJ-4Z1" secondAttribute="bottom" constant="2" id="ZD4-Hv-XLt"/>
-                            <constraint firstItem="TLW-Ea-yif" firstAttribute="centerY" secondItem="gJp-Ot-giF" secondAttribute="centerY" id="ZLA-Jj-bLT"/>
-                            <constraint firstItem="koh-51-e5K" firstAttribute="centerX" secondItem="gJp-Ot-giF" secondAttribute="centerX" id="m8M-l4-4t0"/>
-                            <constraint firstItem="TLW-Ea-yif" firstAttribute="centerX" secondItem="gJp-Ot-giF" secondAttribute="centerX" id="ndm-Vf-jGb"/>
+                            <constraint firstItem="Oft-Xe-5bQ" firstAttribute="centerX" secondItem="gJp-Ot-giF" secondAttribute="centerX" id="7cf-T6-cSY"/>
+                            <constraint firstItem="koh-51-e5K" firstAttribute="centerX" secondItem="Oft-Xe-5bQ" secondAttribute="centerX" id="eos-BY-edA"/>
+                            <constraint firstItem="koh-51-e5K" firstAttribute="centerY" secondItem="Oft-Xe-5bQ" secondAttribute="centerY" id="ex5-uC-7pL"/>
+                            <constraint firstItem="Oft-Xe-5bQ" firstAttribute="centerY" secondItem="gJp-Ot-giF" secondAttribute="centerY" id="vvY-IE-hcM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7RS-cG-stK"/>
                     </view>
                     <connections>
-                        <outlet property="logo" destination="TLW-Ea-yif" id="6fW-gO-9tf"/>
+                        <outlet property="logo" destination="Oft-Xe-5bQ" id="x8s-nM-TYQ"/>
                         <outlet property="veloIcon" destination="koh-51-e5K" id="ucr-qO-edB"/>
                     </connections>
                 </viewController>
@@ -489,35 +481,18 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-big" translatesAutoresizingMaskIntoConstraints="NO" id="6fC-ta-ltd">
-                                            <rect key="frame" x="127" y="23" width="120" height="120"/>
+                                            <rect key="frame" x="102" y="15" width="170" height="170"/>
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="120" id="1pM-WP-erT"/>
-                                                <constraint firstAttribute="width" constant="120" id="uPr-RA-erW"/>
+                                                <constraint firstAttribute="height" constant="170" id="1pM-WP-erT"/>
+                                                <constraint firstAttribute="width" constant="170" id="uPr-RA-erW"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fS-Aa-DIP">
-                                            <rect key="frame" x="102.5" y="145" width="170" height="1"/>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="170" id="GiA-rc-4Vp"/>
-                                                <constraint firstAttribute="height" constant="1" id="ikg-pa-mRi"/>
-                                            </constraints>
-                                        </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VeloLviv" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbK-B7-7YV">
-                                            <rect key="frame" x="136.5" y="148" width="103" height="36"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="sbK-B7-7YV" secondAttribute="bottom" constant="16" id="AR5-rg-4iY"/>
-                                        <constraint firstItem="sbK-B7-7YV" firstAttribute="top" secondItem="0fS-Aa-DIP" secondAttribute="bottom" constant="2" id="Fsr-u3-cSB"/>
-                                        <constraint firstItem="sbK-B7-7YV" firstAttribute="centerX" secondItem="LfZ-Nf-Toe" secondAttribute="centerX" id="adU-Qs-U8J"/>
+                                        <constraint firstItem="6fC-ta-ltd" firstAttribute="centerY" secondItem="LfZ-Nf-Toe" secondAttribute="centerY" id="FCB-yS-vXI"/>
                                         <constraint firstItem="6fC-ta-ltd" firstAttribute="centerX" secondItem="LfZ-Nf-Toe" secondAttribute="centerX" id="dmb-u1-gM5"/>
-                                        <constraint firstItem="0fS-Aa-DIP" firstAttribute="top" secondItem="6fC-ta-ltd" secondAttribute="bottom" constant="2" id="lwX-u2-KnE"/>
-                                        <constraint firstItem="0fS-Aa-DIP" firstAttribute="centerX" secondItem="LfZ-Nf-Toe" secondAttribute="centerX" id="mRm-1n-ARD"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -577,6 +552,7 @@
         <image name="ic_check_box_outline_blank" width="24" height="24"/>
         <image name="ic_chevron_left" width="16" height="16"/>
         <image name="logo-big" width="256" height="256"/>
+        <image name="man-cycling_bottom" width="709" height="709"/>
         <image name="menu" width="24" height="24"/>
     </resources>
 </document>

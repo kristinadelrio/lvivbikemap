@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "envelope (1).png",
+      "filename" : "man-cycling_bottom.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "envelope (2).png",
       "scale" : "2x"
     },
     {

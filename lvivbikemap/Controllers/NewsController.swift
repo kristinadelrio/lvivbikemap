@@ -22,7 +22,7 @@ class NewsController: UIViewController {
     }
     
     func configure() {
-        guard let url = URL(string: "http://velo.lviv-online.com/") else {
+        guard let url = URL(string: "http://lav.org.ua/category/novyny/") else {
             return
         }
         

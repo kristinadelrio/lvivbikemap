@@ -170,15 +170,15 @@ extension SideMenuController: UITableViewDataSource {
             return cell
         case .interestPlaces:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Place of interest".localized, state: filters.interestPlaces)
+            cell.configure(with: "Places of interest".localized, state: filters.interestPlaces)
             return cell
         case .bicyclePaths:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Bicycle path".localized, state: filters.bicyclePaths)
+            cell.configure(with: "Bicycle paths".localized, state: filters.bicyclePaths)
             return cell
         case .bikeParking:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Bike parking".localized, state: filters.bikeParking)
+            cell.configure(with: "Bike parkings".localized, state: filters.bikeParking)
             return cell
         case .compileRoad:
             let cell: RoadCell = tableView.dequeueReusableCell(at: indexPath)

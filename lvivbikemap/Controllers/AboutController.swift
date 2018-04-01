@@ -45,7 +45,7 @@ extension AboutController: UITableViewDataSource {
         case .mail:
             let cell: UITableViewCell = tableView.dequeueReusableCell(at: indexPath)
             cell.imageView?.image = #imageLiteral(resourceName: "gmail")
-            cell.textLabel?.text = "Our page in Google+".localized
+            cell.textLabel?.text = "Mail us".localized
             return cell
         }
     }
@@ -90,8 +90,8 @@ extension AboutController: MFMailComposeViewControllerDelegate {
         let composeVC = MFMailComposeViewController()
         composeVC.mailComposeDelegate = self
         composeVC.setToRecipients(["comfycity@ukr.net"])
-        composeVC.setSubject("Hello, VeloLviv!")
-        composeVC.setMessageBody("This is my message body!", isHTML: false)
+        composeVC.setSubject("Hello, Lviv Bike Map!".localized)
+        composeVC.setMessageBody("This is my message body!".localized, isHTML: false)
         self.present(composeVC, animated: true, completion: nil)
     }
     
