@@ -38,6 +38,7 @@ class MapController: UIViewController {
         
         initClasterization()
         manager.delegate = self
+        changeLocationStatus(nil)
         requestUserLocation()
         configureService()
         setupMapStyle()
@@ -177,9 +178,10 @@ extension MapController: CLLocationManagerDelegate {
             mapView.animate(to: camera)
             mapView.isMyLocationEnabled = true
         default:
-            let camera = GMSCameraPosition.camera(withLatitude: 49.83826, longitude: 24.02324, zoom: 20.0)
-            mapView.animate(to: camera)
+            let camera = GMSCameraPosition.camera(withLatitude: 49.83826, longitude: 24.02324, zoom: 10.0)
+            mapView.camera = camera
             mapView.isMyLocationEnabled = false
+            mapView.animate(to: camera)
         }
     }
 }
