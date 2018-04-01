@@ -10,9 +10,11 @@ import Foundation
 class ClusterPoint: NSObject, GMUClusterItem {
     var position: CLLocationCoordinate2D
     var name: String!
+    var image: UIImage!
     
-    init(position: CLLocationCoordinate2D, name: String) {
+    init(position: CLLocationCoordinate2D, name: String, image: UIImage? = nil) {
         self.position = position
         self.name = name
+        self.image = image
     }
 }

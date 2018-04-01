@@ -60,6 +60,8 @@
 		0E68674C2070DF10004A558C /* GMUGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6867432070DF0E004A558C /* GMUGradient.m */; };
 		0E68674D2070DF10004A558C /* GQTPointQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6867442070DF0E004A558C /* GQTPointQuadTree.m */; };
 		0E68674E2070DF10004A558C /* GMUHeatmapTileLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6867452070DF0F004A558C /* GMUHeatmapTileLayer.m */; };
+		0E6867502070F607004A558C /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E68674F2070F607004A558C /* style.json */; };
+		0E6867522071029E004A558C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6867512071029E004A558C /* Category.swift */; };
 		A701F127865732B9E03123A6 /* Pods_lvivbikemap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */; };
 /* End PBXBuildFile section */
 
@@ -173,6 +175,8 @@
 		0E6867472070DF0F004A558C /* GQTPointQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTPointQuadTree.h; sourceTree = "<group>"; };
 		0E6867482070DF0F004A558C /* GQTPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTPoint.h; sourceTree = "<group>"; };
 		0E6867492070DF10004A558C /* GQTBounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTBounds.h; sourceTree = "<group>"; };
+		0E68674F2070F607004A558C /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		0E6867512071029E004A558C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4EE4D1B5CEAE50BADDE784DA /* Pods-lvivbikemap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.debug.xcconfig"; sourceTree = "<group>"; };
 		6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lvivbikemap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24DDEEE8DAD96B05C307E45 /* Pods-lvivbikemap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.release.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 				0E6865F7206F9881004A558C /* Assets.xcassets */,
 				0E6865F9206F9881004A558C /* LaunchScreen.storyboard */,
 				0E68662D206FB5D3004A558C /* Localizable.strings */,
+				0E68674F2070F607004A558C /* style.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 			children = (
 				0E686638206FC02F004A558C /* MapService.swift */,
 				0E68664620702147004A558C /* FiltersProvider.swift */,
+				0E6867512071029E004A558C /* Category.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -511,6 +517,7 @@
 				0E6865FB206F9881004A558C /* LaunchScreen.storyboard in Resources */,
 				0E68662B206FB5D3004A558C /* Localizable.strings in Resources */,
 				0E6865F8206F9881004A558C /* Assets.xcassets in Resources */,
+				0E6867502070F607004A558C /* style.json in Resources */,
 				0E6865F6206F987D004A558C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +620,7 @@
 				0E686620206FA90E004A558C /* SideMenuController.swift in Sources */,
 				0E68674D2070DF10004A558C /* GQTPointQuadTree.m in Sources */,
 				0E6867352070DEF4004A558C /* GMUFeature.m in Sources */,
+				0E6867522071029E004A558C /* Category.swift in Sources */,
 				0E6866552070376B004A558C /* NewsController.swift in Sources */,
 				0E6867112070DEB0004A558C /* GMUDefaultClusterRenderer.m in Sources */,
 				0E68665220703744004A558C /* EventsController.swift in Sources */,
@@ -810,6 +818,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HVKBNHWDD2;
 				INFOPLIST_FILE = lvivbikemap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -829,6 +838,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HVKBNHWDD2;
 				INFOPLIST_FILE = lvivbikemap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
