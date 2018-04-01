@@ -36,21 +36,22 @@ class MapController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let iconGenerator = GMUDefaultClusterIconGenerator(
-            buckets: [10, 25, 50, 100, 200],
-            backgroundColors: [UIColor(hex: 0x88CC88), UIColor(hex: 0x55AA55), UIColor(hex: 0x116611), UIColor(hex: 0x004400), UIColor(hex: 0x001F00)])
- 
-        let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
-        let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
-        renderer.delegate = self
-        clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
-    
-        clusterManager.setDelegate(self, mapDelegate: self)
+        initClasterization()
         manager.delegate = self
         requestUserLocation()
         configureService()
         setupMapStyle()
         loadPoint()
+    }
+    
+    func initClasterization() {
+        let iconGenerator = GMUDefaultClusterIconGenerator(
+            buckets: [10, 25, 50, 100, 200], backgroundColors: ThemeManager.shared.clasterColors)
+        let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
+        let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
+        renderer.delegate = self
+        clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
+        clusterManager.setDelegate(self, mapDelegate: self)
     }
     
     /// Set style for map loaded from json
