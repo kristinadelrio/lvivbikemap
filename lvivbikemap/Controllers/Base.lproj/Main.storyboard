@@ -53,10 +53,71 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="cTe-Db-YpZ" id="saN-wg-UqZ"/>
+                        <outlet property="markerDetailView" destination="zlk-8r-eXB" id="Dey-YU-MOk"/>
                         <outlet property="menuButton" destination="1qd-Mr-Tfv" id="woQ-W6-AgH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="zlk-8r-eXB" customClass="MarkerDetailView" customModule="lvivbikemap" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZYW-im-gvS">
+                            <rect key="frame" x="8" y="10" width="284" height="50"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2J9-qR-gMS">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="vc4-xA-HID"/>
+                                        <constraint firstAttribute="width" constant="50" id="wYV-xR-qpp"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EfH-4h-p3U">
+                                    <rect key="frame" x="60" y="0.0" width="184" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyk-EA-EHa">
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="25"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.185546875" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58B-Hy-89Q">
+                                            <rect key="frame" x="0.0" y="25" width="184" height="25"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                            <color key="textColor" white="0.57630750868055558" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Q9-4a-vmd">
+                                    <rect key="frame" x="254" y="0.0" width="30" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="Wc6-E0-8Di"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="onShowDetail:" destination="zlk-8r-eXB" eventType="touchUpInside" id="GcM-m1-dDs"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="2J9-qR-gMS" firstAttribute="centerY" secondItem="ZYW-im-gvS" secondAttribute="centerY" id="6hI-2P-0ot"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ZYW-im-gvS" firstAttribute="centerY" secondItem="zlk-8r-eXB" secondAttribute="centerY" id="ItG-Nk-uJb"/>
+                        <constraint firstItem="Kdc-ly-Mbs" firstAttribute="trailing" secondItem="ZYW-im-gvS" secondAttribute="trailing" constant="8" id="Z6m-xE-myS"/>
+                        <constraint firstItem="ZYW-im-gvS" firstAttribute="leading" secondItem="Kdc-ly-Mbs" secondAttribute="leading" constant="8" id="epm-t7-x9m"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="Kdc-ly-Mbs"/>
+                    <connections>
+                        <outlet property="detailButton" destination="1Q9-4a-vmd" id="7U9-Wo-oyp"/>
+                        <outlet property="imageView" destination="2J9-qR-gMS" id="HVz-i4-Y2U"/>
+                        <outlet property="loactionLabel" destination="58B-Hy-89Q" id="Vgp-Q0-ZZe"/>
+                        <outlet property="nameLabel" destination="jyk-EA-EHa" id="3dE-oE-GUa"/>
+                    </connections>
+                </view>
             </objects>
             <point key="canvasLocation" x="-358" y="116"/>
         </scene>

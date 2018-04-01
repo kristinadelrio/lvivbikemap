@@ -12,6 +12,7 @@ import CoreLocation
 
 class MapController: UIViewController {
     
+    @IBOutlet var markerDetailView: MarkerDetailView!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var menuButton: UIButton!
     
@@ -35,7 +36,10 @@ class MapController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let iconGenerator = GMUDefaultClusterIconGenerator()
+        let iconGenerator = GMUDefaultClusterIconGenerator(
+            buckets: [10, 25, 50, 100, 200],
+            backgroundColors: [UIColor(hex: 0x88CC88), UIColor(hex: 0x55AA55), UIColor(hex: 0x116611), UIColor(hex: 0x004400), UIColor(hex: 0x001F00)])
+ 
         let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
         let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
         renderer.delegate = self
@@ -107,8 +111,11 @@ class MapController: UIViewController {
 extension MapController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-        // TODO:
-        return UIView()
+        markerDetailView.prepareForReuse()
+        markerDetailView.imageView.image = #imageLiteral(resourceName: "cycling")
+        markerDetailView.nameLabel.text = marker.title
+        markerDetailView.loactionLabel.text = "\(marker.position.latitude)" + "|" + "\(marker.position.longitude)"
+        return markerDetailView
     }
 }
 
@@ -119,6 +126,7 @@ extension MapController: GMUClusterManagerDelegate {
         let update = GMSCameraUpdate.setCamera(newCamera)
         mapView.moveCamera(update)
     }
+
 }
 
 extension MapController: GMUClusterRendererDelegate {
@@ -164,7 +172,7 @@ extension MapController: CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             let lat = location?.coordinate.latitude ?? 0.0
             let long = location?.coordinate.longitude ?? 0.0
-            let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 20.0)
+            let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15.0)
             mapView.animate(to: camera)
             mapView.isMyLocationEnabled = true
         default:
