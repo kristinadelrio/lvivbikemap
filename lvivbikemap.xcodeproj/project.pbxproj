@@ -26,7 +26,7 @@
 		0E68663E20700326004A558C /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68663D20700326004A558C /* FilterCell.swift */; };
 		0E68664020700947004A558C /* TableView+DequeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68663F20700947004A558C /* TableView+DequeCell.swift */; };
 		0E68664320702046004A558C /* FiltersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68664220702046004A558C /* FiltersModel.swift */; };
-		0E68664520702136004A558C /* RealmMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68664420702136004A558C /* RealmMediator.swift */; };
+		0E68664520702136004A558C /* RealmObjectAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68664420702136004A558C /* RealmObjectAdapter.swift */; };
 		0E68664720702147004A558C /* FiltersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68664620702147004A558C /* FiltersProvider.swift */; };
 		0E68664920702250004A558C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68664820702250004A558C /* RealmService.swift */; };
 		0E68664B20702CF2004A558C /* RoadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68664A20702CF2004A558C /* RoadCell.swift */; };
@@ -64,7 +64,7 @@
 		0E6867522071029E004A558C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6867512071029E004A558C /* Category.swift */; };
 		0E68675420710C2C004A558C /* MarkerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675320710C2C004A558C /* MarkerDetailView.swift */; };
 		0E68675620711179004A558C /* ClusterAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675520711179004A558C /* ClusterAlgorithm.swift */; };
-		0E68675920711459004A558C /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675820711459004A558C /* UIColor+hex.swift */; };
+		0E68675920711459004A558C /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675820711459004A558C /* UIColor+Hex.swift */; };
 		A701F127865732B9E03123A6 /* Pods_lvivbikemap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +104,7 @@
 		0E68663D20700326004A558C /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		0E68663F20700947004A558C /* TableView+DequeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+DequeCell.swift"; sourceTree = "<group>"; };
 		0E68664220702046004A558C /* FiltersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersModel.swift; sourceTree = "<group>"; };
-		0E68664420702136004A558C /* RealmMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMediator.swift; sourceTree = "<group>"; };
+		0E68664420702136004A558C /* RealmObjectAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjectAdapter.swift; sourceTree = "<group>"; };
 		0E68664620702147004A558C /* FiltersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersProvider.swift; sourceTree = "<group>"; };
 		0E68664820702250004A558C /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		0E68664A20702CF2004A558C /* RoadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadCell.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		0E6867512071029E004A558C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0E68675320710C2C004A558C /* MarkerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDetailView.swift; sourceTree = "<group>"; };
 		0E68675520711179004A558C /* ClusterAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAlgorithm.swift; sourceTree = "<group>"; };
-		0E68675820711459004A558C /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		0E68675820711459004A558C /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		4EE4D1B5CEAE50BADDE784DA /* Pods-lvivbikemap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.debug.xcconfig"; sourceTree = "<group>"; };
 		6939C84A307DFD38BDD49886 /* Pods_lvivbikemap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lvivbikemap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24DDEEE8DAD96B05C307E45 /* Pods-lvivbikemap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.release.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.release.xcconfig"; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				0E68661A206FA90E004A558C /* UIViewController+SideMenu.swift */,
-				0E68675820711459004A558C /* UIColor+hex.swift */,
+				0E68675820711459004A558C /* UIColor+Hex.swift */,
 				0E686629206FB217004A558C /* String+Localization.swift */,
 				0E68663F20700947004A558C /* TableView+DequeCell.swift */,
 			);
@@ -315,7 +315,7 @@
 				0E68667B2070C19A004A558C /* Google-Maps-iOS-Utils */,
 				0E686627206FB062004A558C /* ThemeManager.swift */,
 				0E68664820702250004A558C /* RealmService.swift */,
-				0E68664420702136004A558C /* RealmMediator.swift */,
+				0E68664420702136004A558C /* RealmObjectAdapter.swift */,
 				0E6866E32070C6DE004A558C /* Bridge-Header.h */,
 			);
 			path = Common;
@@ -629,7 +629,7 @@
 				0E68664720702147004A558C /* FiltersProvider.swift in Sources */,
 				0E68674A2070DF10004A558C /* GQTPointQuadTreeChild.m in Sources */,
 				0E6867182070DEB0004A558C /* GMUDefaultClusterIconGenerator.m in Sources */,
-				0E68675920711459004A558C /* UIColor+hex.swift in Sources */,
+				0E68675920711459004A558C /* UIColor+Hex.swift in Sources */,
 				0E686639206FC02F004A558C /* MapService.swift in Sources */,
 				0E6867372070DEF4004A558C /* GMUGeometryRenderer.m in Sources */,
 				0E6867332070DEF4004A558C /* GMUKMLParser.m in Sources */,
@@ -654,7 +654,7 @@
 				0E6867382070DEF4004A558C /* GMUGeoJSONParser.m in Sources */,
 				0E6865F1206F987D004A558C /* AppDelegate.swift in Sources */,
 				0E6867172070DEB0004A558C /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
-				0E68664520702136004A558C /* RealmMediator.swift in Sources */,
+				0E68664520702136004A558C /* RealmObjectAdapter.swift in Sources */,
 				0E6867322070DEF4004A558C /* GMUPoint.m in Sources */,
 				0E6867132070DEB0004A558C /* GMUStaticCluster.m in Sources */,
 				0E68664020700947004A558C /* TableView+DequeCell.swift in Sources */,

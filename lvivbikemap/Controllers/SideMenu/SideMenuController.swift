@@ -1,9 +1,8 @@
 //
 //  SideMenuController.swift
-//  ForgetMeNot
+//  lvivbikemap
 //
-//  Created by Kristina Del Rio Albrechet on 11/6/17.
-//  Copyright © 2017 Sergii Tarasov. All rights reserved.
+//  Created by Kristina Del Rio Albrechet on 4/1/18.
 //
 
 import UIKit

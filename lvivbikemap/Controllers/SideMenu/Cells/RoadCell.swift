@@ -12,7 +12,6 @@ class RoadCell: UITableViewCell {
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

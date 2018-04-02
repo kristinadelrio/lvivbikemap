@@ -112,19 +112,6 @@ class MapController: UIViewController {
 
 extension MapController: GMSMapViewDelegate {
     
-//    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-//        markerDetailView.prepareForReuse()
-//        markerDetailView.imageView.image = #imageLiteral(resourceName: "cycling")
-//        markerDetailView.nameLabel.text = marker.title
-//        markerDetailView.loactionLabel.text = "\(marker.position.latitude)" + "|" + "\(marker.position.longitude)"
-//
-//        return false
-//    }
-//
-//    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-//
-//        return markerDetailView
-//    }
 }
 
 extension MapController: GMUClusterManagerDelegate {

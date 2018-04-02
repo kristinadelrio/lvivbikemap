@@ -1,9 +1,10 @@
 //
 //  RealmService.swift
+//  lvivbikemap
 //
-//  Created by Sergii Tarasov on 11/21/17.
-//  Copyright © 2017 Sergii Tarasov. All rights reserved.
+//  Created by Kristina Del Rio Albrechet on 3/31/18.
 //
+
 
 import Foundation
 import RealmSwift

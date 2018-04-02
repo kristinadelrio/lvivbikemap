@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -162,7 +163,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilterCell" textLabel="7dC-X9-CdY" imageView="Ac8-Uv-H64" rowHeight="40" style="IBUITableViewCellStyleDefault" id="nvN-dc-uC6" customClass="FilterCell" customModule="lvivbikemap" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilterCell" textLabel="7dC-X9-CdY" imageView="Ac8-Uv-H64" rowHeight="40" style="IBUITableViewCellStyleDefault" id="nvN-dc-uC6" customClass="FilterCell" customModule="lvivbikemap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="78" width="270" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nvN-dc-uC6" id="Xl3-2t-AtD">
@@ -185,7 +186,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoadCell" rowHeight="80" id="DBj-Dc-cGq" customClass="RoadCell" customModule="lvivbikemap" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoadCell" rowHeight="80" id="DBj-Dc-cGq" customClass="RoadCell" customModule="lvivbikemap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="118" width="270" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DBj-Dc-cGq" id="VZy-Wa-p3t">
@@ -193,17 +194,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vtQ-zJ-nbM">
-                                                    <rect key="frame" x="15" y="11" width="240" height="58"/>
+                                                    <rect key="frame" x="15" y="11" width="135" height="58"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8x-2z-RG8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="27"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="135" height="27"/>
                                                             <color key="backgroundColor" white="1" alpha="0.27514982876712329" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="textColor" white="0.0" alpha="0.85188356164383561" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbE-II-wE4">
-                                                            <rect key="frame" x="0.0" y="31" width="240" height="27"/>
+                                                            <rect key="frame" x="0.0" y="31" width="135" height="27"/>
                                                             <color key="backgroundColor" white="1" alpha="0.27514982876712329" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="textColor" white="0.0" alpha="0.85188356164383561" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -318,12 +319,52 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f0h-ee-fWY">
+                                <rect key="frame" x="40" y="144" width="295" height="70"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTh-RJ-MFT">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email adress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BYM-xk-JHD">
+                                        <rect key="frame" x="0.0" y="40" width="295" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kta-1v-LzT">
+                                <rect key="frame" x="114" y="399" width="147.5" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.067155393839999994" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" text="Type here" translatesAutoresizingMaskIntoConstraints="NO" id="19v-0I-hpR">
+                                <rect key="frame" x="40" y="229" width="295" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="EE9-lz-aUH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="VV4-QD-g3k" firstAttribute="trailing" secondItem="f0h-ee-fWY" secondAttribute="trailing" constant="40" id="0hw-t4-nhm"/>
                             <constraint firstItem="myc-pt-sEA" firstAttribute="leading" secondItem="VV4-QD-g3k" secondAttribute="leading" id="8me-M5-aKd"/>
+                            <constraint firstItem="f0h-ee-fWY" firstAttribute="leading" secondItem="VV4-QD-g3k" secondAttribute="leading" constant="40" id="9FH-La-aiP"/>
                             <constraint firstItem="myc-pt-sEA" firstAttribute="top" secondItem="VV4-QD-g3k" secondAttribute="top" id="AnM-Db-bTa"/>
+                            <constraint firstItem="19v-0I-hpR" firstAttribute="top" secondItem="f0h-ee-fWY" secondAttribute="bottom" constant="15" id="Czb-jF-snq"/>
+                            <constraint firstItem="kta-1v-LzT" firstAttribute="width" secondItem="19v-0I-hpR" secondAttribute="width" multiplier="0.5" id="DcP-ZP-Uzs"/>
+                            <constraint firstItem="kta-1v-LzT" firstAttribute="centerX" secondItem="szP-wE-VrR" secondAttribute="centerX" id="Fzz-li-GQD"/>
+                            <constraint firstItem="f0h-ee-fWY" firstAttribute="top" secondItem="myc-pt-sEA" secondAttribute="bottom" constant="80" id="HgC-dt-Gxa"/>
                             <constraint firstItem="myc-pt-sEA" firstAttribute="trailing" secondItem="VV4-QD-g3k" secondAttribute="trailing" id="QiD-pq-uHY"/>
+                            <constraint firstItem="kta-1v-LzT" firstAttribute="top" secondItem="19v-0I-hpR" secondAttribute="bottom" constant="20" id="gnO-7C-qn0"/>
+                            <constraint firstItem="19v-0I-hpR" firstAttribute="trailing" secondItem="f0h-ee-fWY" secondAttribute="trailing" id="pq9-kb-dGv"/>
+                            <constraint firstItem="19v-0I-hpR" firstAttribute="leading" secondItem="f0h-ee-fWY" secondAttribute="leading" id="y2M-7k-r2E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VV4-QD-g3k"/>
                     </view>
