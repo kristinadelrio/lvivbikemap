@@ -12,7 +12,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Provide us your location to build roud.</string>
 	<key>NSLocationUsageDescription</key>
-	<string>gfdfb</string>
+	<string>Provide us your location to build roud.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

@@ -12,7 +12,6 @@
 		0E6865F6206F987D004A558C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6865F4206F987D004A558C /* Main.storyboard */; };
 		0E6865F8206F9881004A558C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E6865F7206F9881004A558C /* Assets.xcassets */; };
 		0E6865FB206F9881004A558C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6865F9206F9881004A558C /* LaunchScreen.storyboard */; };
-		0E686606206F9882004A558C /* lvivbikemapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686605206F9882004A558C /* lvivbikemapTests.swift */; };
 		0E68661D206FA90E004A558C /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686618206FA90E004A558C /* SideMenu.swift */; };
 		0E68661F206FA90E004A558C /* UIViewController+SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68661A206FA90E004A558C /* UIViewController+SideMenu.swift */; };
 		0E686620206FA90E004A558C /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68661B206FA90E004A558C /* SideMenuController.swift */; };
@@ -44,16 +43,6 @@
 		5757477BFF848EE6CCC2AC2E /* libPods-lvivbikemap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C3F1B452EB46BFE3FBFE /* libPods-lvivbikemap.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0E686602206F9882004A558C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E6865E5206F987D004A558C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E6865EC206F987D004A558C;
-			remoteInfo = lvivbikemap;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		0E6865ED206F987D004A558C /* lvivbikemap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lvivbikemap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6865F0206F987D004A558C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,9 +51,6 @@
 		0E6865F7206F9881004A558C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E6865FA206F9881004A558C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E6865FC206F9881004A558C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E686601206F9882004A558C /* lvivbikemapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lvivbikemapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E686605206F9882004A558C /* lvivbikemapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lvivbikemapTests.swift; sourceTree = "<group>"; };
-		0E686607206F9882004A558C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E686618206FA90E004A558C /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		0E68661A206FA90E004A558C /* UIViewController+SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+SideMenu.swift"; sourceTree = "<group>"; };
 		0E68661B206FA90E004A558C /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
@@ -111,13 +97,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0E6865FE206F9882004A558C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				0E6865EF206F987D004A558C /* lvivbikemap */,
-				0E686604206F9882004A558C /* lvivbikemapTests */,
 				0E6865EE206F987D004A558C /* Products */,
 				A771B78E92C5C67A18873FF5 /* Pods */,
 				18D51B551BDB3A23D09B6F0A /* Frameworks */,
@@ -136,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				0E6865ED206F987D004A558C /* lvivbikemap.app */,
-				0E686601206F9882004A558C /* lvivbikemapTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,15 +130,6 @@
 				0E686610206F99DB004A558C /* Controllers */,
 			);
 			path = lvivbikemap;
-			sourceTree = "<group>";
-		};
-		0E686604206F9882004A558C /* lvivbikemapTests */ = {
-			isa = PBXGroup;
-			children = (
-				0E686605206F9882004A558C /* lvivbikemapTests.swift */,
-				0E686607206F9882004A558C /* Info.plist */,
-			);
-			path = lvivbikemapTests;
 			sourceTree = "<group>";
 		};
 		0E686610206F99DB004A558C /* Controllers */ = {
@@ -311,24 +279,6 @@
 			productReference = 0E6865ED206F987D004A558C /* lvivbikemap.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0E686600206F9882004A558C /* lvivbikemapTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0E68660D206F9882004A558C /* Build configuration list for PBXNativeTarget "lvivbikemapTests" */;
-			buildPhases = (
-				0E6865FD206F9882004A558C /* Sources */,
-				0E6865FE206F9882004A558C /* Frameworks */,
-				0E6865FF206F9882004A558C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0E686603206F9882004A558C /* PBXTargetDependency */,
-			);
-			name = lvivbikemapTests;
-			productName = lvivbikemapTests;
-			productReference = 0E686601206F9882004A558C /* lvivbikemapTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -340,10 +290,6 @@
 				TargetAttributes = {
 					0E6865EC206F987D004A558C = {
 						CreatedOnToolsVersion = 9.3;
-					};
-					0E686600206F9882004A558C = {
-						CreatedOnToolsVersion = 9.3;
-						TestTargetID = 0E6865EC206F987D004A558C;
 					};
 				};
 			};
@@ -362,7 +308,6 @@
 			projectRoot = "";
 			targets = (
 				0E6865EC206F987D004A558C /* lvivbikemap */,
-				0E686600206F9882004A558C /* lvivbikemapTests */,
 			);
 		};
 /* End PBXProject section */
@@ -377,13 +322,6 @@
 				0E6865F8206F9881004A558C /* Assets.xcassets in Resources */,
 				0E6867502070F607004A558C /* style.json in Resources */,
 				0E6865F6206F987D004A558C /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E6865FF206F9882004A558C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,23 +401,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0E6865FD206F9882004A558C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E686606206F9882004A558C /* lvivbikemapTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0E686603206F9882004A558C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0E6865EC206F987D004A558C /* lvivbikemap */;
-			targetProxy = 0E686602206F9882004A558C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0E6865F4206F987D004A558C /* Main.storyboard */ = {
@@ -667,46 +589,6 @@
 			};
 			name = Release;
 		};
-		0E68660E206F9882004A558C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = lvivbikemapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemapTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lvivbikemap.app/lvivbikemap";
-			};
-			name = Debug;
-		};
-		0E68660F206F9882004A558C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = lvivbikemapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemapTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lvivbikemap.app/lvivbikemap";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -724,15 +606,6 @@
 			buildConfigurations = (
 				0E68660B206F9882004A558C /* Debug */,
 				0E68660C206F9882004A558C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0E68660D206F9882004A558C /* Build configuration list for PBXNativeTarget "lvivbikemapTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0E68660E206F9882004A558C /* Debug */,
-				0E68660F206F9882004A558C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
