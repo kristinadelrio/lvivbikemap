@@ -10,12 +10,13 @@ import GoogleMaps
 
 class ClusterPoint: NSObject, GMUClusterItem {
     var position: CLLocationCoordinate2D
-    var name: String!
-    var image: UIImage!
+    var name: String
+    var image: UIImage
     
-    init(position: CLLocationCoordinate2D, name: String, image: UIImage? = nil) {
+    required init(position: CLLocationCoordinate2D, name: String, image: UIImage) {
         self.position = position
         self.name = name
         self.image = image
+        super.init()
     }
 }

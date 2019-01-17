@@ -47,7 +47,7 @@ class MapController: UIViewController {
     
     func initClasterization() {
         let iconGenerator = GMUDefaultClusterIconGenerator(
-            buckets: [10, 25, 50, 100, 200], backgroundColors: ThemeManager.shared.clasterColors)
+            buckets: [10, 25, 50, 100, 200], backgroundColors: ThemeScheme.clasterColors)
         let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
         let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
         renderer.delegate = self
@@ -128,9 +128,10 @@ extension MapController: GMUClusterRendererDelegate {
     
     func renderer(_ renderer: GMUClusterRenderer, markerFor object: Any) -> GMSMarker? {
         if let obj = object as? ClusterPoint {
-        let mark = GMSMarker(position: obj.position)
+            let mark = GMSMarker()
             mark.icon = obj.image
             mark.title = obj.name
+            mark.position = obj.position
             
             return mark
         }

@@ -17,7 +17,7 @@
 		0E686620206FA90E004A558C /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68661B206FA90E004A558C /* SideMenuController.swift */; };
 		0E686621206FA90E004A558C /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68661C206FA90E004A558C /* SideMenuCell.swift */; };
 		0E686623206FAD4D004A558C /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686622206FAD4D004A558C /* LaunchScreenController.swift */; };
-		0E686628206FB062004A558C /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686627206FB062004A558C /* ThemeManager.swift */; };
+		0E686628206FB062004A558C /* ThemeScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686627206FB062004A558C /* ThemeScheme.swift */; };
 		0E68662A206FB217004A558C /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686629206FB217004A558C /* String+Localization.swift */; };
 		0E68662B206FB5D3004A558C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E68662D206FB5D3004A558C /* Localizable.strings */; };
 		0E686634206FB918004A558C /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E686633206FB918004A558C /* AboutController.swift */; };
@@ -40,6 +40,7 @@
 		0E68675420710C2C004A558C /* MarkerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675320710C2C004A558C /* MarkerDetailView.swift */; };
 		0E68675620711179004A558C /* ClusterAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675520711179004A558C /* ClusterAlgorithm.swift */; };
 		0E68675920711459004A558C /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675820711459004A558C /* UIColor+Hex.swift */; };
+		0E81FB2F21F0C94A0028577F /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E81FB2E21F0C94A0028577F /* Filter.swift */; };
 		5757477BFF848EE6CCC2AC2E /* libPods-lvivbikemap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C3F1B452EB46BFE3FBFE /* libPods-lvivbikemap.a */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +57,7 @@
 		0E68661B206FA90E004A558C /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		0E68661C206FA90E004A558C /* SideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		0E686622206FAD4D004A558C /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
-		0E686627206FB062004A558C /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		0E686627206FB062004A558C /* ThemeScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeScheme.swift; sourceTree = "<group>"; };
 		0E686629206FB217004A558C /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		0E68662E206FB5D8004A558C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0E686633206FB918004A558C /* AboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		0E68675520711179004A558C /* ClusterAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAlgorithm.swift; sourceTree = "<group>"; };
 		0E68675820711459004A558C /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		0E81FB2C21F0A4060028577F /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
+		0E81FB2E21F0C94A0028577F /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		4EE4D1B5CEAE50BADDE784DA /* Pods-lvivbikemap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.debug.xcconfig"; sourceTree = "<group>"; };
 		99C8C3F1B452EB46BFE3FBFE /* libPods-lvivbikemap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lvivbikemap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24DDEEE8DAD96B05C307E45 /* Pods-lvivbikemap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.release.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,13 +123,14 @@
 		0E6865EF206F987D004A558C /* lvivbikemap */ = {
 			isa = PBXGroup;
 			children = (
-				0E686626206FB056004A558C /* Common */,
-				0E6865FC206F9881004A558C /* Info.plist */,
-				0E686615206F9B0C004A558C /* Extension */,
-				0E68664120702017004A558C /* Models */,
-				0E686612206F9A60004A558C /* Services */,
-				0E686611206F9A06004A558C /* Resources */,
 				0E686610206F99DB004A558C /* Controllers */,
+				0E81FB2D21F0C9290028577F /* Object Models */,
+				0E686612206F9A60004A558C /* Services */,
+				0E81FB3021F0C96B0028577F /* Providers */,
+				0E81FB3121F0C9BC0028577F /* Realm */,
+				0E686615206F9B0C004A558C /* Extension */,
+				0E686611206F9A06004A558C /* Resources */,
+				0E81FB3221F0CA5F0028577F /* Supporting Files */,
 			);
 			path = lvivbikemap;
 			sourceTree = "<group>";
@@ -150,10 +153,8 @@
 		0E686611206F9A06004A558C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0E6865F0206F987D004A558C /* AppDelegate.swift */,
-				0E6865F7206F9881004A558C /* Assets.xcassets */,
-				0E6865F9206F9881004A558C /* LaunchScreen.storyboard */,
 				0E68662D206FB5D3004A558C /* Localizable.strings */,
+				0E6865F7206F9881004A558C /* Assets.xcassets */,
 				0E68674F2070F607004A558C /* style.json */,
 			);
 			path = Resources;
@@ -163,8 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				0E686638206FC02F004A558C /* MapService.swift */,
-				0E68664620702147004A558C /* FiltersProvider.swift */,
-				0E6867512071029E004A558C /* Category.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -188,17 +187,6 @@
 				0E68661B206FA90E004A558C /* SideMenuController.swift */,
 			);
 			path = SideMenu;
-			sourceTree = "<group>";
-		};
-		0E686626206FB056004A558C /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				0E686627206FB062004A558C /* ThemeManager.swift */,
-				0E68664820702250004A558C /* RealmService.swift */,
-				0E68664420702136004A558C /* RealmObjectAdapter.swift */,
-				0E81FB2C21F0A4060028577F /* Bridge-Header.h */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		0E68664120702017004A558C /* Models */ = {
@@ -232,11 +220,50 @@
 			isa = PBXGroup;
 			children = (
 				0E6865F2206F987D004A558C /* MapController.swift */,
-				0E6866E42070CC46004A558C /* ClusterPoint.swift */,
 				0E68675320710C2C004A558C /* MarkerDetailView.swift */,
 				0E68675520711179004A558C /* ClusterAlgorithm.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		0E81FB2D21F0C9290028577F /* Object Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E6866E42070CC46004A558C /* ClusterPoint.swift */,
+				0E6867512071029E004A558C /* Category.swift */,
+				0E81FB2E21F0C94A0028577F /* Filter.swift */,
+			);
+			path = "Object Models";
+			sourceTree = "<group>";
+		};
+		0E81FB3021F0C96B0028577F /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				0E68664620702147004A558C /* FiltersProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		0E81FB3121F0C9BC0028577F /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				0E68664120702017004A558C /* Models */,
+				0E68664820702250004A558C /* RealmService.swift */,
+				0E68664420702136004A558C /* RealmObjectAdapter.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		0E81FB3221F0CA5F0028577F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E6865F0206F987D004A558C /* AppDelegate.swift */,
+				0E686627206FB062004A558C /* ThemeScheme.swift */,
+				0E6865F9206F9881004A558C /* LaunchScreen.storyboard */,
+				0E81FB2C21F0A4060028577F /* Bridge-Header.h */,
+				0E6865FC206F9881004A558C /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		18D51B551BDB3A23D09B6F0A /* Frameworks */ = {
@@ -390,8 +417,9 @@
 				0E68665220703744004A558C /* EventsController.swift in Sources */,
 				0E68661F206FA90E004A558C /* UIViewController+SideMenu.swift in Sources */,
 				0E68675620711179004A558C /* ClusterAlgorithm.swift in Sources */,
-				0E686628206FB062004A558C /* ThemeManager.swift in Sources */,
+				0E686628206FB062004A558C /* ThemeScheme.swift in Sources */,
 				0E6865F3206F987D004A558C /* MapController.swift in Sources */,
+				0E81FB2F21F0C94A0028577F /* Filter.swift in Sources */,
 				0E68665020703735004A558C /* EventDetailController.swift in Sources */,
 				0E6865F1206F987D004A558C /* AppDelegate.swift in Sources */,
 				0E68664520702136004A558C /* RealmObjectAdapter.swift in Sources */,
@@ -556,14 +584,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HVKBNHWDD2;
-				INFOPLIST_FILE = lvivbikemap/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/lvivbikemap/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "lvivbikemap/Common/Bridge-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "lvivbikemap/Supporting Files/Bridge-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -576,14 +604,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HVKBNHWDD2;
-				INFOPLIST_FILE = lvivbikemap/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/lvivbikemap/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hack.kind.lvivbikemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "lvivbikemap/Common/Bridge-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "lvivbikemap/Supporting Files/Bridge-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -9,16 +9,6 @@ import Foundation
 
 class FiltersProvider {
     
-    enum Filter {
-        case bikeRental
-        case bikeSharing
-        case bikeRepair
-        case bikeStops
-        case interestPlaces
-        case bicyclePaths
-        case bikeParking
-    }
-    
     private static let mediator = RealmObjectAdapter<FiltersModel>()
 
     static func filters() -> FiltersModel {
@@ -43,20 +33,13 @@ class FiltersProvider {
         
         try? RealmService.write {
             switch filter {
-            case .bikeRental:
-                filters.bikeRental = value
-            case .bikeSharing:
-                filters.bikeSharing = value
-            case .bikeRepair:
-                filters.bikeRepair = value
-            case .bikeStops:
-                filters.bikeStops = value
-            case .interestPlaces:
-                filters.interestPlaces = value
-            case .bicyclePaths:
-                filters.bicyclePaths = value
-            case .bikeParking:
-                filters.bikeParking = value
+            case .bikeRental: filters.bikeRental = value
+            case .bikeSharing: filters.bikeSharing = value
+            case .bikeRepair: filters.bikeRepair = value
+            case .bikeStops: filters.bikeStops = value
+            case .interestPlaces: filters.interestPlaces = value
+            case .bicyclePaths: filters.bicyclePaths = value
+            case .bikeParking: filters.bikeParking = value
             }
         }
     }

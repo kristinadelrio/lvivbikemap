@@ -35,7 +35,7 @@ struct Point {
 class MapService {
     
     static var shared = MapService()
-    private var urlStr = "http://ec2-52-57-78-207.eu-central-1.compute.amazonaws.com:3000/api/points"
+    private var urlStr = "http://localhost:4200/api/points"
 
     func getPoints(complition: @escaping (Error?, [Point]?)->()) {
         Alamofire.request(urlStr, method: .get).responseJSON { response in
