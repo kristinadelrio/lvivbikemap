@@ -1,4 +1,4 @@
-framework module Pods_lvivbikemap {
+module Pods_lvivbikemap {
   umbrella header "Pods-lvivbikemap-umbrella.h"
 
   export *

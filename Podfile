@@ -1,12 +1,15 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, 10.0
+inhibit_all_warnings!
+
+source 'https://github.com/CocoaPods/Specs.git'
 
 target 'lvivbikemap' do
-    
-use_frameworks!
+
+use_modular_headers!
 
   pod 'GoogleMaps'
   pod 'RealmSwift'
   pod 'Alamofire'
-
+  pod 'Google-Maps-iOS-Utils'
+  
 end

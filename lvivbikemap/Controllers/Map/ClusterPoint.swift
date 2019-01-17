@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GoogleMaps
 
 class ClusterPoint: NSObject, GMUClusterItem {
     var position: CLLocationCoordinate2D
