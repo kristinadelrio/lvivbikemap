@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Category: String {
+enum Categories: String {
     
     case sharing = "5c404c42b6096e16498a4a06"
     case repair = "5c404c42b6096e16498a4a07" // and store

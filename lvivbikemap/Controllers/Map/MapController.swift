@@ -73,7 +73,7 @@ class MapController: UIViewController {
     
     /// Loads velo points
     private func loadPoint() {
-        MapService.shared.getPoints { [weak self] (err, points) in
+        MapService.getPoints { [weak self] (err, points) in
             self?.points = points
         }
     }
@@ -88,14 +88,14 @@ class MapController: UIViewController {
     private func generateMarkers() {
         DispatchQueue.main.async {
             self.filtered?.forEach({
-                let lat = $0.feature?.geametry?.coordinate[1] ?? 0
-                let long = $0.feature?.geametry?.coordinate[0] ?? 0
+                let lat = $0.feature?.geometry?.coordinates?.values?.first?[1] ?? 0
+                let long = $0.feature?.geometry?.coordinates?.values?.first?[0] ?? 0
                 let position = CLLocationCoordinate2D(latitude: lat, longitude: long)
                 let name = $0.feature?.properties?.name ?? ""
                 
                 let item = ClusterPoint(position: position,
                                         name: name,
-                                        image: Category(rawValue: $0.categoryID ?? "")?.icon ?? UIImage())
+                                        image: Categories(rawValue: $0.feature?.properties?.category?.id ?? "")?.icon ?? UIImage())
    
                 self.clusterManager.add(item)
             })
@@ -200,31 +200,31 @@ extension MapController {
         var filteredPoints = points
         
         if !filters.bikeStops {
-            filteredPoints = filteredPoints?.filter({ $0.categoryID ?? "" != Category.stops.rawValue })
+            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.stops.rawValue })
         }
         
         if !filters.bikeRental {
-            filteredPoints = filteredPoints?.filter({ $0.categoryID ?? "" != Category.rental.rawValue })
+            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.rental.rawValue })
         }
         
         if !filters.bikeParking {
-            filteredPoints = filteredPoints?.filter({ $0.categoryID ?? "" != Category.parking.rawValue })
+            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.parking.rawValue })
         }
         
         if !filters.bicyclePaths {
-            filteredPoints = filteredPoints?.filter({ $0.categoryID ?? "" != Category.path.rawValue })
+            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.path.rawValue })
         }
         
         if !filters.bikeSharing {
-            filteredPoints = filteredPoints?.filter({ $0.categoryID ?? "" != Category.sharing.rawValue })
+            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.sharing.rawValue })
         }
         
         if !filters.bikeRepair {
-            filteredPoints = filteredPoints?.filter({ $0.categoryID ?? "" != Category.repair.rawValue })
+            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.repair.rawValue })
         }
         
         if !filters.interestPlaces {
-            filteredPoints = filteredPoints?.filter({ $0.categoryID ?? "" != Category.interests.rawValue })
+            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.interests.rawValue })
         }
         
         filtered = filteredPoints

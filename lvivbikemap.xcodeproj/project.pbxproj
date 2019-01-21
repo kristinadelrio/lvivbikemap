@@ -41,6 +41,8 @@
 		0E68675620711179004A558C /* ClusterAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675520711179004A558C /* ClusterAlgorithm.swift */; };
 		0E68675920711459004A558C /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675820711459004A558C /* UIColor+Hex.swift */; };
 		0E81FB2F21F0C94A0028577F /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E81FB2E21F0C94A0028577F /* Filter.swift */; };
+		0E81FB3421F5D9910028577F /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E81FB3321F5D9910028577F /* Point.swift */; };
+		0E81FB3621F5E8F50028577F /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E81FB3521F5E8F50028577F /* Coordinates.swift */; };
 		5757477BFF848EE6CCC2AC2E /* libPods-lvivbikemap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C3F1B452EB46BFE3FBFE /* libPods-lvivbikemap.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		0E68675820711459004A558C /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		0E81FB2C21F0A4060028577F /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		0E81FB2E21F0C94A0028577F /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		0E81FB3321F5D9910028577F /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		0E81FB3521F5E8F50028577F /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		4EE4D1B5CEAE50BADDE784DA /* Pods-lvivbikemap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.debug.xcconfig"; sourceTree = "<group>"; };
 		99C8C3F1B452EB46BFE3FBFE /* libPods-lvivbikemap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lvivbikemap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A24DDEEE8DAD96B05C307E45 /* Pods-lvivbikemap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lvivbikemap.release.xcconfig"; path = "Pods/Target Support Files/Pods-lvivbikemap/Pods-lvivbikemap.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,8 +234,10 @@
 			isa = PBXGroup;
 			children = (
 				0E6866E42070CC46004A558C /* ClusterPoint.swift */,
-				0E6867512071029E004A558C /* Category.swift */,
+				0E81FB3321F5D9910028577F /* Point.swift */,
 				0E81FB2E21F0C94A0028577F /* Filter.swift */,
+				0E6867512071029E004A558C /* Category.swift */,
+				0E81FB3521F5E8F50028577F /* Coordinates.swift */,
 			);
 			path = "Object Models";
 			sourceTree = "<group>";
@@ -405,7 +411,9 @@
 				0E686634206FB918004A558C /* AboutController.swift in Sources */,
 				0E686621206FA90E004A558C /* SideMenuCell.swift in Sources */,
 				0E68664E2070370E004A558C /* FeedbackController.swift in Sources */,
+				0E81FB3421F5D9910028577F /* Point.swift in Sources */,
 				0E68664B20702CF2004A558C /* RoadCell.swift in Sources */,
+				0E81FB3621F5E8F50028577F /* Coordinates.swift in Sources */,
 				0E686623206FAD4D004A558C /* LaunchScreenController.swift in Sources */,
 				0E68664720702147004A558C /* FiltersProvider.swift in Sources */,
 				0E68675920711459004A558C /* UIColor+Hex.swift in Sources */,
