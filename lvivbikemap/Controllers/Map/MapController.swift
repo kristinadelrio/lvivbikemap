@@ -95,7 +95,7 @@ class MapController: UIViewController {
                 
                 let item = ClusterPoint(position: position,
                                         name: name,
-                                        image: Categories(rawValue: $0.feature?.properties?.category?.id ?? "")?.icon ?? UIImage())
+                                        image: CategoryMapper.get(for:$0.feature?.properties?.category?.id ?? "") ?? UIImage())
    
                 self.clusterManager.add(item)
             })
@@ -196,37 +196,12 @@ extension MapController {
     }
     
     func filter() {
-        let filters = FiltersProvider.filters()
-        var filteredPoints = points
+        let activeCategories = FiltersProvider.filters().array.compactMap({
+            $0.state ? $0.id : nil
+        })
         
-        if !filters.bikeStops {
-            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.stops.rawValue })
-        }
-        
-        if !filters.bikeRental {
-            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.rental.rawValue })
-        }
-        
-        if !filters.bikeParking {
-            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.parking.rawValue })
-        }
-        
-        if !filters.bicyclePaths {
-            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.path.rawValue })
-        }
-        
-        if !filters.bikeSharing {
-            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.sharing.rawValue })
-        }
-        
-        if !filters.bikeRepair {
-            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.repair.rawValue })
-        }
-        
-        if !filters.interestPlaces {
-            filteredPoints = filteredPoints?.filter({ $0.feature?.properties?.category?.id ?? "" != Categories.interests.rawValue })
-        }
-        
-        filtered = filteredPoints
+        filtered = points?.filter({
+            activeCategories.contains($0.feature?.properties?.category?.id ?? "")
+        })
     }
 }

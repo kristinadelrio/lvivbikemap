@@ -33,13 +33,13 @@ class FiltersProvider {
         
         try? RealmService.write {
             switch filter {
-            case .bikeRental: filters.bikeRental = value
-            case .bikeSharing: filters.bikeSharing = value
-            case .bikeRepair: filters.bikeRepair = value
-            case .bikeStops: filters.bikeStops = value
-            case .interestPlaces: filters.interestPlaces = value
-            case .bicyclePaths: filters.bicyclePaths = value
-            case .bikeParking: filters.bikeParking = value
+            case .bikeRental: filters.bikeRental?.state = value
+            case .bikeSharing: filters.bikeSharing?.state = value
+            case .bikeRepair: filters.bikeRepair?.state = value
+            case .bikeStops: filters.bikeStops?.state = value
+            case .interestPlaces: filters.interestPlaces?.state = value
+            case .bicyclePaths: filters.bicyclePaths?.state = value
+            case .bikeParking: filters.bikeParking?.state = value
             }
         }
     }
