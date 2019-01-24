@@ -14,7 +14,7 @@ class MapController: UIViewController {
     
     @IBOutlet var markerDetailView: MarkerDetailView!
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     private var clusterManager: GMUClusterManager!
     private var filtersToken: NotificationToken?
@@ -22,7 +22,7 @@ class MapController: UIViewController {
     let manager = CLLocationManager()
     var points: [MapObject]? = nil {
         didSet {
-            filter()
+            filterObjects()
         }
     }
     
@@ -189,13 +189,13 @@ extension MapController {
     func updateValues(_ change: ObjectChange) {
         switch change {
         case .change:
-            filter()
+            filterObjects()
         default:
             break
         }
     }
     
-    func filter() {
+    func filterObjects() {
         filtered = points?.filter({
             FiltersService.getActive().map({
                 FiltersService.getCategoryId(for: $0)

@@ -9,14 +9,12 @@ import UIKit
 
 class FeedbackController: UIViewController {
     
-    @IBOutlet weak var navBar: UINavigationBar!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.topItem?.title = TranslationConstants.kSendUsFeedback.localized
+        title = TranslationConstants.kSendUsFeedback.localized
     }
     
     @IBAction func onClose(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }

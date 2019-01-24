@@ -10,14 +10,13 @@ import WebKit
 
 class NewsController: UIViewController {
 
-    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.topItem?.title = TranslationConstants.kNewsFeed.localized
+        title = TranslationConstants.kNewsFeed.localized
         configure()
     }
     
@@ -32,7 +31,7 @@ class NewsController: UIViewController {
     }
     
     @IBAction func onClose(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

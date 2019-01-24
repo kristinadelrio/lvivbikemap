@@ -12,7 +12,6 @@ import MessageUI
 class AboutController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var navBar: UINavigationBar!
     
     enum Row: Int {
         case facebook
@@ -25,11 +24,11 @@ class AboutController: UIViewController {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
-        navBar.topItem?.title = TranslationConstants.kAboutUs.localized
+        title = TranslationConstants.kAboutUs.localized
     }
     
     @IBAction func onClose(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -56,10 +55,6 @@ extension AboutController: UITableViewDataSource {
 }
 
 extension AboutController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

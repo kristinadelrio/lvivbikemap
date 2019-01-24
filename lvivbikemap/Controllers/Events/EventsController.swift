@@ -17,6 +17,6 @@ class EventsController: UIViewController {
     }
     
     @IBAction func onClose(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }

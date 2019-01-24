@@ -43,10 +43,9 @@ class LaunchScreenController: UIViewController {
     }
     
     func presentRootApplicationScene() {
-        let mainViewController = storyboard?.instantiateViewController(withIdentifier:
-            "MapScene")
-        let sideMenuController = storyboard?.instantiateViewController(withIdentifier:
-            "SideMenuControllerIdentifier") as? SideMenuController
+        let mainViewController = storyboard?.instantiateViewController(withIdentifier: "MapScene")
+        let sideMenuController = storyboard?.instantiateViewController(
+            withIdentifier: "SideMenuControllerIdentifier") as? SideMenuController
         
         if let rootController = mainViewController, let slideMenuController = sideMenuController {
             let sideMenu = SideMenu(with: rootController, and: slideMenuController)
