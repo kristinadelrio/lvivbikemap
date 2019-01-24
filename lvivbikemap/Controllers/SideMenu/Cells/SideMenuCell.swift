@@ -19,5 +19,7 @@ class SideMenuCell: UITableViewCell {
         textLabel?.text = text
         imageView?.image = image
     }
+    
+    
 }
 

@@ -1,5 +1,5 @@
 //
-//  Point.swift
+//  MapObject.swift
 //  lvivbikemap
 //
 //  Created by Kristina Del Rio Albrechet on 1/21/19.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Point: Decodable {
+struct MapObject: Decodable {
 
     let id: String?
     let feature: Feature?

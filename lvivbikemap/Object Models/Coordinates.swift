@@ -12,30 +12,29 @@ typealias Coordinate = Array<Double>
 enum Coordinates: Decodable {
     
     enum CoordinatesError: Error {
-        case missingValue
+        case unexpectedValue
     }
     
-    case coordinate(Coordinate)
-    case polygon([Coordinate])
+    case coordinates([Coordinate])
     
     init(from decoder: Decoder) throws {
-        if let coordinate = try? decoder.singleValueContainer().decode(Coordinate.self) {
-            self = .coordinate(coordinate)
-            return
+        if let coordinate = try? decoder.singleValueContainer()
+            .decode(Coordinate.self) {
+            self = .coordinates([coordinate])
+            
+        } else if let polygon = try? decoder.singleValueContainer()
+            .decode(Array<Coordinate>.self) {
+            self = .coordinates(polygon)
+            
+        } else {
+            throw CoordinatesError.unexpectedValue
         }
-        
-        if let polygon = try? decoder.singleValueContainer().decode(Array<Coordinate>.self) {
-            self = .polygon(polygon)
-            return
-        }
-        
-        throw CoordinatesError.missingValue
     }
     
-    var values: [[Double]]? {
-        switch self {
-        case .coordinate(let coordinate): return [coordinate]
-        case .polygon(let polygon): return polygon
+    var values: [Coordinate]? {
+        guard case let .coordinates(coordinates) = self else {
+            return nil
         }
+        return coordinates
     }
 }

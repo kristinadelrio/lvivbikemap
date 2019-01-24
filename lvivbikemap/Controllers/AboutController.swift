@@ -25,7 +25,7 @@ class AboutController: UIViewController {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
-        navBar.topItem?.title = "About us".localized
+        navBar.topItem?.title = TranslationConstants.kAboutUs.localized
     }
     
     @IBAction func onClose(_ sender: UIBarButtonItem) {
@@ -40,12 +40,12 @@ extension AboutController: UITableViewDataSource {
         case .facebook:
             let cell: UITableViewCell = tableView.dequeueReusableCell(at: indexPath)
             cell.imageView?.image = #imageLiteral(resourceName: "facebook")
-            cell.textLabel?.text = "Our page in Facebook".localized
+            cell.textLabel?.text = TranslationConstants.kOurFacebook.localized
             return cell
         case .mail:
             let cell: UITableViewCell = tableView.dequeueReusableCell(at: indexPath)
             cell.imageView?.image = #imageLiteral(resourceName: "gmail")
-            cell.textLabel?.text = "Mail us".localized
+            cell.textLabel?.text = TranslationConstants.kMailUs.localized
             return cell
         }
     }
@@ -66,7 +66,7 @@ extension AboutController: UITableViewDelegate {
         
         switch skeleton[indexPath.row] {
         case .facebook:
-            guard let url = URL(string: "https://www.facebook.com/comfycity.lviv/") else {
+            guard let url = URL(string: ResourceStrings.kFacebookLink) else {
                 return
             }
             
@@ -76,7 +76,6 @@ extension AboutController: UITableViewDelegate {
             
         case .mail:
             if !MFMailComposeViewController.canSendMail() {
-                print("Mail services are not available")
                 return
             }
             sendEmail()
@@ -89,9 +88,9 @@ extension AboutController: MFMailComposeViewControllerDelegate {
     func sendEmail() {
         let composeVC = MFMailComposeViewController()
         composeVC.mailComposeDelegate = self
-        composeVC.setToRecipients(["comfycity@ukr.net"])
-        composeVC.setSubject("Hello, Lviv Bike Map!".localized)
-        composeVC.setMessageBody("This is my message body!".localized, isHTML: false)
+        composeVC.setToRecipients([ResourceStrings.kEmailAdress])
+        composeVC.setSubject(TranslationConstants.kEmailSubject.localized)
+        composeVC.setMessageBody(TranslationConstants.kEmailBody.localized, isHTML: false)
         self.present(composeVC, animated: true, completion: nil)
     }
     

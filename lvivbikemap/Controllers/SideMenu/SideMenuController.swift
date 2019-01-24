@@ -17,9 +17,7 @@ class SideMenuController: UIViewController {
         case news
         case feedback
         case about
-        
         case compileRoad
-        
         case bikeRental
         case bikeSharing
         case bikeRepair
@@ -30,21 +28,14 @@ class SideMenuController: UIViewController {
     }
     
     @IBOutlet weak var tableView: UITableView!
-    private var filters = FiltersProvider.filters()
+    private var filters = FiltersMediator.filters
     private var isFiltering = false
     private var isCompileRoad = false
     
-    
     private var skeleton: [Row] {
-        if isFiltering {
-            return [.addMarker, .buildRoad, .filter, .bikeRental, .bikeSharing, .bikeRepair,
-                    .bikeStops, .interestPlaces, .bicyclePaths, .bikeParking, .events,
-                    .news, .feedback, .about]
-        } else if isCompileRoad {
-            return [.addMarker, .buildRoad, .compileRoad, .filter, .events, .news, .feedback, .about]
-        } else {
-            return [.addMarker, .buildRoad, .filter, .events, .news, .feedback, .about]
-        }
+        return [.addMarker, .buildRoad, .filter, .bikeRental, .bikeSharing, .bikeRepair,
+                .bikeStops, .interestPlaces, .bicyclePaths, .bikeParking, .events,
+                .news, .feedback, .about]
     }
 }
 
@@ -53,7 +44,10 @@ extension SideMenuController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch skeleton[indexPath.row] {
         case .compileRoad:
-            return 80.0
+            return isCompileRoad ? 80.0 : 0.0
+        case .bikeRental, .bikeSharing, .bikeRepair,
+             .bikeStops, .interestPlaces, .bicyclePaths, .bikeParking:
+            return isFiltering ? 44.0 : 0.0
         default:
             return 44.0
         }
@@ -82,26 +76,26 @@ extension SideMenuController: UITableViewDelegate {
             isFiltering = !isFiltering
             tableView.reloadData()
         case .bikeRental:
-            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeRental.state
-            FiltersProvider.update(filter: .bikeRental, value: !filters.bikeRental.state)
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeRental
+            FiltersMediator.update(filter: .bikeRental, value: !filters.bikeRental)
         case .bikeSharing:
-            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeSharing.state
-            FiltersProvider.update(filter: .bikeSharing, value: !filters.bikeSharing.state)
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeSharing
+            FiltersMediator.update(filter: .bikeSharing, value: !filters.bikeSharing)
         case .bikeRepair:
-            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeRepair.state
-            FiltersProvider.update(filter: .bikeRepair, value: !filters.bikeRepair.state)
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeRepair
+            FiltersMediator.update(filter: .bikeRepair, value: !filters.bikeRepair)
         case .bikeStops:
-            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeStops.state
-            FiltersProvider.update(filter: .bikeStops, value: !filters.bikeStops.state)
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeStops
+            FiltersMediator.update(filter: .bikeStops, value: !filters.bikeStops)
         case .interestPlaces:
-            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.interestPlaces.state
-            FiltersProvider.update(filter: .interestPlaces, value: !filters.interestPlaces.state)
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.interestPlaces
+            FiltersMediator.update(filter: .interestPlaces, value: !filters.interestPlaces)
         case .bicyclePaths:
-            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bicyclePaths.state
-            FiltersProvider.update(filter: .bicyclePaths, value: !filters.bicyclePaths.state)
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bicyclePaths
+            FiltersMediator.update(filter: .bicyclePaths, value: !filters.bicyclePaths)
         case .bikeParking:
-            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeParking.state
-            FiltersProvider.update(filter: .bikeParking, value: !filters.bikeParking.state)
+            (tableView.cellForRow(at: indexPath) as? FilterCell)?.isChecked = !filters.bikeParking
+            FiltersMediator.update(filter: .bikeParking, value: !filters.bikeParking)
         default:
             break
         }
@@ -125,59 +119,59 @@ extension SideMenuController: UITableViewDataSource {
         switch skeleton[indexPath.row] {
         case .addMarker:
             let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Add new marker".localized, #imageLiteral(resourceName: "add"))
+            cell.configure(with: TranslationConstants.kAddNewMarker.localized, #imageLiteral(resourceName: "add"))
             return cell
         case .buildRoad:
             let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Build new road".localized, #imageLiteral(resourceName: "ic_timeline"))
+            cell.configure(with: TranslationConstants.kBuildNewRoad.localized, #imageLiteral(resourceName: "ic_timeline"))
             return cell
         case .events:
             let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Events".localized, #imageLiteral(resourceName: "ic_event"))
+            cell.configure(with: TranslationConstants.kEvents.localized, #imageLiteral(resourceName: "ic_event"))
             return cell
         case .feedback:
             let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Send us feedback".localized, #imageLiteral(resourceName: "ic_feedback"))
+            cell.configure(with: TranslationConstants.kSendUsFeedback.localized, #imageLiteral(resourceName: "ic_feedback"))
             return cell
         case .filter:
             let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Filter".localized, #imageLiteral(resourceName: "ic_filter_list"))
+            cell.configure(with: TranslationConstants.kFilter.localized, #imageLiteral(resourceName: "ic_filter_list"))
             return cell
         case .news:
             let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "News feed".localized, #imageLiteral(resourceName: "ic_dashboard"))
+            cell.configure(with: TranslationConstants.kNewsFeed.localized, #imageLiteral(resourceName: "ic_dashboard"))
             return cell
         case .about:
             let cell: SideMenuCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "About us".localized, #imageLiteral(resourceName: "ic_info"))
+            cell.configure(with: TranslationConstants.kAboutUs.localized, #imageLiteral(resourceName: "ic_info"))
             return cell
         case .bikeRental:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Bike rental".localized, state: filters.bikeRental.state)
+            cell.configure(with: TranslationConstants.kBikeRental.localized, state: filters.bikeRental)
             return cell
         case .bikeSharing:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Public bike sharing".localized, state: filters.bikeSharing.state)
+            cell.configure(with: TranslationConstants.kBikeSharing.localized, state: filters.bikeSharing)
             return cell
         case .bikeRepair:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Bike repair".localized, state: filters.bikeRepair.state)
+            cell.configure(with: TranslationConstants.kBikeRepair.localized, state: filters.bikeRepair)
             return cell
         case .bikeStops:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Usefull stops".localized, state: filters.bikeStops.state)
+            cell.configure(with: TranslationConstants.kBikeStops.localized, state: filters.bikeStops)
             return cell
         case .interestPlaces:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Places of interest".localized, state: filters.interestPlaces.state)
+            cell.configure(with: TranslationConstants.kBikeInterests.localized, state: filters.interestPlaces)
             return cell
         case .bicyclePaths:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Bicycle paths".localized, state: filters.bicyclePaths.state)
+            cell.configure(with: TranslationConstants.kBikePath.localized, state: filters.bicyclePaths)
             return cell
         case .bikeParking:
             let cell: FilterCell = tableView.dequeueReusableCell(at: indexPath)
-            cell.configure(with: "Bike parkings".localized, state: filters.bikeParking.state)
+            cell.configure(with: TranslationConstants.kBikeParking.localized, state: filters.bikeParking)
             return cell
         case .compileRoad:
             let cell: RoadCell = tableView.dequeueReusableCell(at: indexPath)

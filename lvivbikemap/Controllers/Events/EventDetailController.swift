@@ -11,7 +11,6 @@ class EventDetailController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.title = "Event Detail".localized
+        navigationItem.title = TranslationConstants.kEventDetail.localized
     }
 }

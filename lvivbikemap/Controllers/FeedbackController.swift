@@ -13,9 +13,7 @@ class FeedbackController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navBar.topItem?.title = "Send us feedback".localized
-
+        navBar.topItem?.title = TranslationConstants.kSendUsFeedback.localized
     }
     
     @IBAction func onClose(_ sender: UIBarButtonItem) {

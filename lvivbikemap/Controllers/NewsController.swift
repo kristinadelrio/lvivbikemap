@@ -17,12 +17,12 @@ class NewsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.topItem?.title = "News feed".localized
+        navBar.topItem?.title = TranslationConstants.kNewsFeed.localized
         configure()
     }
     
     func configure() {
-        guard let url = URL(string: "http://lav.org.ua/category/novyny/") else {
+        guard let url = URL(string: ResourceStrings.kNewsLink) else {
             return
         }
         

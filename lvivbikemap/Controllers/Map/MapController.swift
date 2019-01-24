@@ -20,13 +20,13 @@ class MapController: UIViewController {
     private var filtersToken: NotificationToken?
     
     let manager = CLLocationManager()
-    var points: [Point]? = nil {
+    var points: [MapObject]? = nil {
         didSet {
             filter()
         }
     }
     
-    var filtered: [Point]? = nil {
+    var filtered: [MapObject]? = nil {
         didSet {
             clusterManager.clearItems()
             clusterize()
@@ -73,8 +73,8 @@ class MapController: UIViewController {
     
     /// Loads velo points
     private func loadPoint() {
-        MapService.getPoints { [weak self] (err, points) in
-            self?.points = points
+        MapObjectsService().get { [weak self] (err, objects) in
+            self?.points = objects
         }
     }
     
@@ -183,7 +183,7 @@ extension MapController: CLLocationManagerDelegate {
 extension MapController {
     
     func configureService() {
-        filtersToken = FiltersProvider.filters().observe(updateValues(_:))
+        filtersToken = FiltersMediator.filters.observe(updateValues(_:))
     }
     
     func updateValues(_ change: ObjectChange) {
@@ -196,12 +196,10 @@ extension MapController {
     }
     
     func filter() {
-        let activeCategories = FiltersProvider.filters().array.compactMap({
-            $0.state ? $0.id : nil
-        })
-        
         filtered = points?.filter({
-            activeCategories.contains($0.feature?.properties?.category?.id ?? "")
+            FiltersService.getActive().map({
+                FiltersService.getCategoryId(for: $0)
+            }).contains($0.feature?.properties?.category?.id ?? "")
         })
     }
 }
