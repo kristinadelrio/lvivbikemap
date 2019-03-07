@@ -37,7 +37,6 @@
 		0E6866E52070CC46004A558C /* ClusterPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6866E42070CC46004A558C /* ClusterPoint.swift */; };
 		0E6867502070F607004A558C /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E68674F2070F607004A558C /* style.json */; };
 		0E68675420710C2C004A558C /* MarkerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675320710C2C004A558C /* MarkerDetailView.swift */; };
-		0E68675620711179004A558C /* ClusterAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675520711179004A558C /* ClusterAlgorithm.swift */; };
 		0E68675920711459004A558C /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E68675820711459004A558C /* UIColor+Hex.swift */; };
 		0E81FB2F21F0C94A0028577F /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E81FB2E21F0C94A0028577F /* Filter.swift */; };
 		0E81FB3421F5D9910028577F /* MapObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E81FB3321F5D9910028577F /* MapObject.swift */; };
@@ -87,7 +86,6 @@
 		0E6866E42070CC46004A558C /* ClusterPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterPoint.swift; sourceTree = "<group>"; };
 		0E68674F2070F607004A558C /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 		0E68675320710C2C004A558C /* MarkerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDetailView.swift; sourceTree = "<group>"; };
-		0E68675520711179004A558C /* ClusterAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAlgorithm.swift; sourceTree = "<group>"; };
 		0E68675820711459004A558C /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		0E81FB2C21F0A4060028577F /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
 		0E81FB2E21F0C94A0028577F /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 			children = (
 				0E6865F2206F987D004A558C /* MapController.swift */,
 				0E68675320710C2C004A558C /* MarkerDetailView.swift */,
-				0E68675520711179004A558C /* ClusterAlgorithm.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -454,7 +451,6 @@
 				0E6866552070376B004A558C /* NewsController.swift in Sources */,
 				0E68665220703744004A558C /* EventsController.swift in Sources */,
 				0E68661F206FA90E004A558C /* UIViewController+SideMenu.swift in Sources */,
-				0E68675620711179004A558C /* ClusterAlgorithm.swift in Sources */,
 				0E686628206FB062004A558C /* ThemeScheme.swift in Sources */,
 				0E81FB5121F9E0D20028577F /* CategoriesModel.swift in Sources */,
 				0E81FB3F21F5F0500028577F /* CategoryMapper.swift in Sources */,

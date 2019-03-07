@@ -59,7 +59,7 @@ extension SideMenuController: UITableViewDelegate {
         switch skeleton[indexPath.row] {
         case .addMarker:
             print("TODO")
-        case .buildRoad:
+        case .compileRoad:
             isFiltering = isCompileRoad && isFiltering
             isCompileRoad = !isCompileRoad
             tableView.reloadData()
